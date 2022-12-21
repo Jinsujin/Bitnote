@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SettingTimerCell" id="gTV-IL-0wX" customClass="SettingTimerCell" customModule="Bitnote" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="340" height="62"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="340" height="62"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="문제당 시간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kd4-so-DdZ">
+                        <rect key="frame" x="8" y="17.5" width="275" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="5" borderStyle="roundedRect" placeholder="5" textAlignment="center" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="Bb6-Xc-7AD">
+                        <rect key="frame" x="295" y="14" width="37" height="34"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최대 60분까지 가능합니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bjD-kk-2wi">
+                        <rect key="frame" x="8" y="40" width="140" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" name="font_sub"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Bb6-Xc-7AD" secondAttribute="trailing" constant="8" id="5Ca-L4-Eb0"/>
+                <constraint firstItem="Bb6-Xc-7AD" firstAttribute="leading" secondItem="kd4-so-DdZ" secondAttribute="trailing" constant="12" id="Q8m-Ye-o41"/>
+                <constraint firstItem="bjD-kk-2wi" firstAttribute="leading" secondItem="kd4-so-DdZ" secondAttribute="leading" id="bSr-1h-Wgl"/>
+                <constraint firstItem="kd4-so-DdZ" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" multiplier="0.9" id="p4o-PP-skP"/>
+                <constraint firstAttribute="bottom" secondItem="bjD-kk-2wi" secondAttribute="bottom" constant="6" id="sMG-SO-CB9"/>
+                <constraint firstItem="kd4-so-DdZ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="t3i-0Y-fav"/>
+                <constraint firstItem="Bb6-Xc-7AD" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="xeS-Po-0jg"/>
+            </constraints>
+            <size key="customSize" width="313" height="62"/>
+            <connections>
+                <outlet property="timeExplain" destination="bjD-kk-2wi" id="AE3-DD-Qhb"/>
+                <outlet property="timeField" destination="Bb6-Xc-7AD" id="btP-oa-ew2"/>
+                <outlet property="titleLabel" destination="kd4-so-DdZ" id="a9j-lg-BM4"/>
+            </connections>
+            <point key="canvasLocation" x="185.50724637681162" y="67.633928571428569"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="font_sub">
+            <color red="0.70588235294117652" green="0.70588235294117652" blue="0.70588235294117652" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

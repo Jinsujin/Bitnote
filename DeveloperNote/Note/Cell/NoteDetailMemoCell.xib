@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoteDetailMemoCell" rowHeight="172" id="KGk-i7-Jjw" customClass="NoteDetailMemoCell" customModule="DeveloperNote" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="329" height="172"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="329" height="172"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1Sb-SR-483">
+                        <rect key="frame" x="0.0" y="0.0" width="329" height="172"/>
+                        <string key="text">adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ZZ-as-LFQ">
+                        <rect key="frame" x="0.0" y="0.0" width="329" height="172"/>
+                        <connections>
+                            <action selector="touchedCell:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="u9p-IO-sju"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="1Sb-SR-483" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="1mK-hN-apV"/>
+                    <constraint firstItem="5ZZ-as-LFQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="3aJ-fR-nc0"/>
+                    <constraint firstAttribute="bottom" secondItem="5ZZ-as-LFQ" secondAttribute="bottom" id="83a-pi-HWk"/>
+                    <constraint firstAttribute="trailing" secondItem="1Sb-SR-483" secondAttribute="trailing" id="8BY-g0-RUq"/>
+                    <constraint firstItem="1Sb-SR-483" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="K1k-PR-DMq"/>
+                    <constraint firstAttribute="bottom" secondItem="1Sb-SR-483" secondAttribute="bottom" id="LHD-X2-yH7"/>
+                    <constraint firstItem="5ZZ-as-LFQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="RjZ-Wq-0YR"/>
+                    <constraint firstAttribute="trailing" secondItem="5ZZ-as-LFQ" secondAttribute="trailing" id="zVk-zd-aFp"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="memoTextView" destination="1Sb-SR-483" id="VnI-xh-VcN"/>
+            </connections>
+            <point key="canvasLocation" x="-19.565217391304348" y="231.69642857142856"/>
+        </tableViewCell>
+    </objects>
+</document>

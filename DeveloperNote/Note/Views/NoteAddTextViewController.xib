@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NoteAddTextViewController" customModule="Bitnote" customModuleProvider="target">
+            <connections>
+                <outlet property="closeButton" destination="CZU-1m-Czk" id="oZS-Pt-SnX"/>
+                <outlet property="doneButton" destination="Kc3-VI-N2P" id="X3F-eU-QEL"/>
+                <outlet property="navigationBar" destination="a9n-1Q-4pD" id="u7R-QJ-ptZ"/>
+                <outlet property="textView" destination="J0r-MA-rLX" id="KHh-oY-n9R"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a9n-1Q-4pD">
+                    <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <items>
+                        <navigationItem title="텍스트 추가" id="Fh1-SS-th3">
+                            <barButtonItem key="leftBarButtonItem" title="닫기" id="CZU-1m-Czk">
+                                <connections>
+                                    <action selector="touchedCloseButton:" destination="-1" id="BgW-Cq-uiU"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem key="rightBarButtonItem" title="완료" id="Kc3-VI-N2P">
+                                <connections>
+                                    <action selector="touchedDoneButton:" destination="-1" id="J2a-fs-02Y"/>
+                                </connections>
+                            </barButtonItem>
+                        </navigationItem>
+                    </items>
+                </navigationBar>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="J0r-MA-rLX">
+                    <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="textColor" systemColor="darkTextColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
+                </textView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="J0r-MA-rLX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="AdW-ub-zef"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="J0r-MA-rLX" secondAttribute="bottom" id="DgZ-VO-4Zg"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="J0r-MA-rLX" secondAttribute="trailing" id="EHD-bo-s2P"/>
+                <constraint firstItem="J0r-MA-rLX" firstAttribute="top" secondItem="a9n-1Q-4pD" secondAttribute="bottom" id="K9X-8k-Dw8"/>
+                <constraint firstItem="a9n-1Q-4pD" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="mTY-Zh-ak8"/>
+                <constraint firstItem="a9n-1Q-4pD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="qxm-LK-8R3"/>
+                <constraint firstItem="a9n-1Q-4pD" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="xtF-S7-nvr"/>
+            </constraints>
+            <point key="canvasLocation" x="135" y="95"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,150 @@
+/**
+    그룹
+ */
+// 리스트
+"group_title" = "Group";
+"group_note_count%d" = "%d notes";
+
+// 생성
+"group_write_title" = "Add Group";
+"group_write_input_description" = "Enter group name";
+"group_write_input_placeholder" = "Group name";
+
+// 수정
+"group_edit_title" = "Edit Group";
+"group_edit_input_placeholder" = "Group name";
+
+
+// 삭제
+"group_delete_title" = "Delete Group";
+"group_delete_alert_message" = "Are you sure delete the group?\n All notes belonging to the group will be deleted.";
+
+
+
+/**
+    노트
+ */
+// 생성
+"note_add_title" = "Add Note";
+"note_item_url_not_allow" = "Not a valid URL format.";
+"note_add_placeholder_title" = "Enter note name";
+"note_add_image_title" = "Select Image";
+"note_image_message_required_album" = "Album access settings are required for image registration.\nWould you like to set it to";
+
+// 수정
+"note_edit_title" = "Edit Note";
+
+
+// 삭제
+"note_delete_title" = "Delete Note";
+"note_delete_alert_message" = "Do you want to delete your note?";
+
+// Item - text
+"note_item_write_title" = "Write Texts";
+
+// Item - image
+"note_item_image_title" = "Image";
+
+// Item - draw image
+"note_item_drawimage_title" = "Draw Image";
+
+"note_study_finish" = "Finished Study";
+
+
+/**
+    노트 학습
+ */
+"lesson_title" = "Note Study";
+
+// 시작 페이지
+"lesson_find_group" = "Search";
+"lesson_start" = "Start";
+"lesson_placeholder_select_group" = "Please select a group to learn.";
+"lesson_message_select_group" = "Please select a group.";
+"lesson_message_nodata_note" = "Don't have any notes to learn.\nPlease create a note first.";
+"lesson_message_nodata_noteitem" = "don't have any notes to learn.\nPlease fill in the contents of note.";
+
+// 학습 공통
+"lesson_count_%d" = "Learn %d";
+"lesson_idonknow" = "Don't know.";
+"lesson_quit_title" = "Quit Learning";
+"lesson_quit_message" = "Would you like to stop?\nLearning content is not saved.";
+
+// 학습 끝
+"lesson_finish_correct_score_%d %d" = "solved %d out of %d questions.";
+"lesson_finish_title" = "End of Learning";
+
+// 백지학습
+"lesson_writeblank_title" = "Blank Writing Learning";
+"lesson_writeblank_explan_label1" = "Start learning.";
+"lesson_writeblank_explan_label2" = "When you start blank learning, Please prepare a blank paper and a pen.";
+"lesson_writeblank_explan_label3" = "Look at the keywords that appear and write down everything that comes to your mind.";
+
+// 깜빡이 암기
+"lesson_blink_title" = "Memorization Learning";
+"lesson_blink_explan_label1" = "Start learning.";
+"lesson_blink_explan_label2" = "Show input in note to timer.";
+"lesson_blink_explan_label3" = "Please set the timer time adjustment in the setting.";
+
+
+// 학습 시작 팝업
+"lesson_start_title" = "Start Learning";
+"lesson_start_description" = "Please choose a learning type.";
+
+
+// 복습
+"review_lesson_title" = "Review Lessons";
+"review_lesson_count_%d" = "Review (%d)";
+
+
+// 학습 안내
+"lesson_guide_title" = "Learning Guidance";
+
+
+/**
+    설정
+ */
+"settings_title" = "Settings";
+"settings_version" = "App Version";
+"settings_study" = "Study Settings";
+"settings_inquiry" = "Inquiry";
+"settings_licenses" = "Licenses";
+"settings_opensources" = "Open Source";
+
+// 학습 설정
+"settings_timer_use" = "Use Timer";
+"settings_lesson_time_per_problem" = "Time per question";
+"settings_lesson_time_explain" = "It can be set until 60 minutes.";
+"settings_lesson_time_unit" = "min";
+"settings_shuffle_use" = "Shuffle note";
+
+
+
+/**
+    위젯
+ */
+"widget_review_description" = "Check out the notebooks that you're going to review today.";
+"widget_review_nodata" = "I don't have any notebooks to review.";
+
+
+
+/**
+    공통
+ */
+"button_ok"= "OK";
+"button_cancel"= "Cancel";
+"button_save"= "Save";
+"button_delete"="Delete";
+"button_edit"="Edit";
+"button_done"="Done";
+"button_next"="Next";
+"button_close" = "Close";
+"button_sort" = "Sort";
+
+"confirm_message_create"="Created.";
+"confirm_message_edit"="Edited.";
+"confirm_message_save"="Saved.";
+
+
+"nodata_title" = "No data";
+"nodata_message" = "Please add data.";

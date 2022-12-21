@@ -1,0 +1,146 @@
+/**
+    그룹
+ */
+
+// 리스트
+"group_title" = "그룹";
+"group_note_count%d" = "%d 개의 글";
+
+// 생성
+"group_write_title" = "그룹 생성";
+"group_write_input_description" = "이름을 입력해 주세요.";
+"group_write_input_placeholder" = "그룹 이름";
+
+// 삭제
+"group_delete_title" = "그룹 삭제";
+"group_delete_alert_message" = "그룹을 삭제하시겠어요? \n그룹에 속한 노트가 모두 삭제됩니다.";
+
+// 수정
+"group_edit_title" = "그룹 수정";
+"group_edit_input_placeholder" = "그룹 이름";
+
+
+
+
+/**
+    노트
+ */
+// 생성
+"note_add_title" = "노트 만들기";
+"note_item_url_not_allow" = "올바른 URL형식이 아닙니다.";
+"note_add_placeholder_title" = "타이틀을 입력해 주세요.";
+"note_add_image_title" = "이미지 등록";
+"note_image_message_required_album" = "이미지 등록을 위해서 앨범 접근 설정이 필요합니다./n설정으로 가시겠어요?";
+
+// 수정
+"note_edit_title" = "노트 수정";
+
+// 삭제
+"note_delete_title" = "노트 삭제";
+"note_delete_alert_message" = "노트를 삭제할까요?";
+
+// Item - text
+"note_item_write_title" = "글 입력";
+
+// Item - image
+"note_item_image_title" = "이미지 추가";
+
+// Item - draw image
+"note_item_drawimage_title" = "그리기";
+
+"note_study_finish" = "학습 완료";
+
+
+/**
+    노트 학습
+ */
+"lesson_title" = "노트 학습";
+
+// 시작 페이지
+"lesson_find_group" = "그룹찾기";
+"lesson_start" = "시작하기";
+"lesson_placeholder_select_group" = "학습할 그룹을 선택해 주세요.";
+"lesson_message_select_group" = "그룹을 선택해 주세요.";
+"lesson_message_nodata_note" = "학습할 노트가 없어요. \n노트를 먼저 생성해 주세요.";
+"lesson_message_nodata_noteitem" = "학습할 노트가 없어요. \n노트의 내용을 채워 주세요.";
+
+// 학습 공통
+"lesson_count_%d" = "%d 번 학습";
+"lesson_idonknow" = "몰라요";
+"lesson_quit_title" = "학습 끝내기";
+"lesson_quit_message" = "종료하시겠어요?\n학습 내용은 저장되지 않아요.";
+
+// 학습 끝
+"lesson_finish_correct_score_%d %d" = "총 %d문제중 %d문제를 풀었습니다.";
+"lesson_finish_title" = "학습 종료";
+
+// 백지학습
+"lesson_writeblank_title" = "백지 학습";
+"lesson_writeblank_explan_label1" = "백지 학습을 시작합니다.";
+"lesson_writeblank_explan_label2" = "백지 학습을 하실때, 종이와 펜을 준비해 주세요.";
+"lesson_writeblank_explan_label3" = "나타나는 키워드를 보고 생각나는 것을 모두 적어보세요.";
+
+
+// 깜빡이 암기
+"lesson_blink_title" = "깜빡이 암기";
+"lesson_blink_explan_label1" = "깜빡이 암기 학습을 시작합니다.";
+"lesson_blink_explan_label2" = "노트에 입력한 내용을 타이머에 맞춰 보여줍니다.";
+"lesson_blink_explan_label3" = "타이머 시간 조절은 [학습 설정 > 문제당 시간]에서 설정해 주세요.";
+
+// 학습 시작 팝업
+"lesson_start_title" = "학습 시작";
+"lesson_start_description" = "학습 방법을 선택해 주세요.";
+
+// 복습
+"review_lesson_title" = "복습";
+"review_lesson_count_%d" = "복습 (%d)";
+
+
+// 학습 안내
+"lesson_guide_title" = "학습 안내";
+
+
+/**
+    설정
+ */
+"settings_title" = "설정";
+"settings_version" = "앱버전";
+"settings_study" = "학습 설정";
+"settings_inquiry" = "문의";
+"settings_licenses" = "라이선스";
+"settings_opensources" = "오픈소스";
+
+// 학습 설정
+"settings_timer_use" = "타이머 사용";
+"settings_lesson_time_per_problem" = "문제당 시간";
+"settings_lesson_time_explain" = "최대 60분까지 가능합니다.";
+"settings_lesson_time_unit" = "분";
+"settings_shuffle_use" = "노트 섞기";
+
+
+/**
+    위젯
+ */
+"widget_review_description" = "오늘 복습할 노트들을 확인해 보세요!";
+"widget_review_nodata" = "복습할 노트가 없습니다.";
+
+
+/**
+    공통
+ */
+"button_ok"= "확인";
+"button_cancel"= "취소";
+"button_save"= "저장";
+"button_delete"="삭제";
+"button_edit"="수정";
+"button_done"="완료";
+"button_next"="다음";
+"button_close" = "닫기";
+"button_sort" = "정렬";
+
+"confirm_message_create"="생성되었습니다.";
+"confirm_message_edit"="수정되었습니다.";
+"confirm_message_save"="저장되었습니다.";
+
+"nodata_title" = "데이터가 없습니다.";
+"nodata_message" = "데이터를 추가해 주세요.";

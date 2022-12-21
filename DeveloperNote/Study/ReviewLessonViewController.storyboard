@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Review Lesson View Controller-->
+        <scene sceneID="XTO-Jv-LVQ">
+            <objects>
+                <viewController id="eZ8-3s-ZZJ" customClass="ReviewLessonViewController" customModule="Bitnote" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QGQ-Zn-J24">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="wny-8Z-BoY">
+                                <rect key="frame" x="34" y="364" width="346" height="168"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="QiF-75-1Ma">
+                                        <rect key="frame" x="0.0" y="0.0" width="346" height="34"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="학습할 그룹을 선택해 주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h4V-nP-pmA">
+                                                <rect key="frame" x="0.0" y="0.0" width="258" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bn2-SO-QQb">
+                                                <rect key="frame" x="278" y="0.0" width="68" height="34"/>
+                                                <color key="backgroundColor" name="main_accent"/>
+                                                <inset key="contentEdgeInsets" minX="6" minY="8" maxX="6" maxY="8"/>
+                                                <state key="normal" title="그룹 찾기">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="touchedFindGroupButton:" destination="eZ8-3s-ZZJ" eventType="touchUpInside" id="g2M-pY-AVx"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kNg-EY-UvX">
+                                        <rect key="frame" x="0.0" y="134" width="346" height="34"/>
+                                        <color key="backgroundColor" name="main_accent"/>
+                                        <state key="normal" title="복습하기 (N개)">
+                                            <color key="titleColor" name="contents_gray"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="goReviewLesson:" destination="eZ8-3s-ZZJ" eventType="touchUpInside" id="2ss-fm-I6C"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="QiF-75-1Ma" firstAttribute="leading" secondItem="wny-8Z-BoY" secondAttribute="leading" id="6YU-J0-ebk"/>
+                                    <constraint firstItem="kNg-EY-UvX" firstAttribute="width" secondItem="wny-8Z-BoY" secondAttribute="width" id="HUD-hh-nYb"/>
+                                    <constraint firstAttribute="trailing" secondItem="QiF-75-1Ma" secondAttribute="trailing" id="Nqe-B0-jr9"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="LGc-6a-hhq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wny-8Z-BoY" firstAttribute="centerX" secondItem="QGQ-Zn-J24" secondAttribute="centerX" id="63K-2N-wXr"/>
+                            <constraint firstItem="wny-8Z-BoY" firstAttribute="centerY" secondItem="QGQ-Zn-J24" secondAttribute="centerY" id="a3I-dn-AcX"/>
+                            <constraint firstItem="LGc-6a-hhq" firstAttribute="trailing" secondItem="wny-8Z-BoY" secondAttribute="trailing" constant="34" id="goa-37-kxO"/>
+                            <constraint firstItem="wny-8Z-BoY" firstAttribute="leading" secondItem="LGc-6a-hhq" secondAttribute="leading" constant="34" id="vYv-YS-YYt"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="zUO-Wc-UVo">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="icon_help" id="kET-nT-2Zi">
+                            <connections>
+                                <action selector="touchedHelpButton:" destination="eZ8-3s-ZZJ" id="ISD-ve-CEc"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="시작하기" id="UMg-Ah-Fc5">
+                            <connections>
+                                <action selector="touchedLessonstartButton:" destination="eZ8-3s-ZZJ" id="cYa-b5-nqM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="findGroupButton" destination="Bn2-SO-QQb" id="j7U-dP-ftU"/>
+                        <outlet property="reviewLessonButton" destination="kNg-EY-UvX" id="Clm-qh-Cax"/>
+                        <outlet property="selectedGroupTextfield" destination="h4V-nP-pmA" id="Bej-WC-BRQ"/>
+                        <outlet property="startButton" destination="UMg-Ah-Fc5" id="BtI-nQ-6be"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ihS-Pi-WdD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="913.04347826086962" y="82.366071428571431"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="eys-cP-igE">
+            <objects>
+                <navigationController storyboardIdentifier="reviewNavi" automaticallyAdjustsScrollViewInsets="NO" id="Xry-JH-5XJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VFY-Fh-IQW">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="eZ8-3s-ZZJ" kind="relationship" relationship="rootViewController" id="aXt-xz-0kW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i4I-mq-1Te" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2.8985507246376816" y="82.366071428571431"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icon_help" width="23" height="23"/>
+        <namedColor name="contents_gray">
+            <color red="0.95686274509803926" green="0.96078431372549022" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="main_accent">
+            <color red="0.27058823529411763" green="0.40392156862745099" blue="0.81176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

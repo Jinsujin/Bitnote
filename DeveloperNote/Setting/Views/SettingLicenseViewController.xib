@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingLicenseViewController" customModule="Bitnote" customModuleProvider="target">
+            <connections>
+                <outlet property="navigationBar" destination="X8j-ni-0J6" id="1lK-kC-Kdz"/>
+                <outlet property="tableView" destination="NHg-qo-ZJ2" id="Aky-Xb-snw"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X8j-ni-0J6">
+                    <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <items>
+                        <navigationItem id="TjW-W4-1F7">
+                            <barButtonItem key="leftBarButtonItem" title="닫기" id="Twm-JY-NOR">
+                                <connections>
+                                    <action selector="touchedCloseButton:" destination="-1" id="JxI-Dd-gKg"/>
+                                </connections>
+                            </barButtonItem>
+                        </navigationItem>
+                    </items>
+                </navigationBar>
+                <tableView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NHg-qo-ZJ2">
+                    <rect key="frame" x="0.0" y="104" width="414" height="758"/>
+                    <color key="sectionIndexColor" red="1" green="0.64811127280000003" blue="0.78995834769999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Uaa-88-BTa"/>
+                        <outlet property="delegate" destination="-1" id="e1b-Bq-6Oh"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" name="contents_gray"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="NHg-qo-ZJ2" secondAttribute="bottom" id="Bvg-1f-h0E"/>
+                <constraint firstItem="X8j-ni-0J6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="DME-3j-5L5"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="X8j-ni-0J6" secondAttribute="trailing" id="PeP-VJ-6fl"/>
+                <constraint firstItem="NHg-qo-ZJ2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="eVB-H8-HBc"/>
+                <constraint firstItem="NHg-qo-ZJ2" firstAttribute="top" secondItem="X8j-ni-0J6" secondAttribute="bottom" constant="16" id="jfn-sc-Sq6"/>
+                <constraint firstItem="X8j-ni-0J6" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="phE-uG-IX2"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="NHg-qo-ZJ2" secondAttribute="trailing" id="wHU-xU-qdz"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="102"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="contents_gray">
+            <color red="0.95686274509803926" green="0.96078431372549022" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
