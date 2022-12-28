@@ -115,6 +115,7 @@
 		6FFD1E7724AE2F24008A52E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6FFD1E7624AE2F24008A52E5 /* Assets.xcassets */; };
 		6FFD1E7A24AE2F24008A52E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FFD1E7824AE2F24008A52E5 /* LaunchScreen.storyboard */; };
 		6FFD1E8824AE4BB5008A52E5 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFD1E8724AE4BB5008A52E5 /* Group.swift */; };
+		981F04B8295C28130023D345 /* BitnoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981F04B7295C28130023D345 /* BitnoteTests.swift */; };
 		98A561C92940A45B00AF6596 /* APIKeyInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98A561C82940A45B00AF6596 /* APIKeyInfo.plist */; };
 /* End PBXBuildFile section */
 
@@ -125,6 +126,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 6F9E74D6273ECC0600533FD6;
 			remoteInfo = ReviewWidgetExtension;
+		};
+		981F04B9295C28130023D345 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6FFD1E6224AE2F20008A52E5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6FFD1E6924AE2F20008A52E5;
+			remoteInfo = DeveloperNote;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -246,6 +254,8 @@
 		6FFD1E7B24AE2F24008A52E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6FFD1E8724AE4BB5008A52E5 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		91739A92FAAF9BE55293339F /* Pods_ReviewWidgetExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReviewWidgetExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		981F04B5295C28130023D345 /* BitnoteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BitnoteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		981F04B7295C28130023D345 /* BitnoteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitnoteTests.swift; sourceTree = "<group>"; };
 		98A561C82940A45B00AF6596 /* APIKeyInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKeyInfo.plist; sourceTree = "<group>"; };
 		DF8A88F91669B7D3171323E1 /* Pods-ReviewWidgetExtension.beta.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReviewWidgetExtension.beta.xcconfig"; path = "Target Support Files/Pods-ReviewWidgetExtension/Pods-ReviewWidgetExtension.beta.xcconfig"; sourceTree = "<group>"; };
 		E376ACB91235365C650D1F75 /* Pods-DeveloperNote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeveloperNote.release.xcconfig"; path = "Target Support Files/Pods-DeveloperNote/Pods-DeveloperNote.release.xcconfig"; sourceTree = "<group>"; };
@@ -268,6 +278,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				44DA638C7B4A5661AF1FF7CC /* Pods_DeveloperNote.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		981F04B2295C28130023D345 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,6 +563,7 @@
 				6F9E74EF273EE54800533FD6 /* ReviewWidgetExtension.entitlements */,
 				6FFD1E6C24AE2F20008A52E5 /* DeveloperNote */,
 				6F9E74DC273ECC0600533FD6 /* ReviewWidget */,
+				981F04B6295C28130023D345 /* BitnoteTests */,
 				6FFD1E6B24AE2F20008A52E5 /* Products */,
 				A478C0A3C8F2B94A60070B04 /* Pods */,
 				92BC8BBBB36F963E85B3C78D /* Frameworks */,
@@ -557,6 +575,7 @@
 			children = (
 				6FFD1E6A24AE2F20008A52E5 /* Bitnote.app */,
 				6F9E74D7273ECC0600533FD6 /* ReviewWidgetExtension.appex */,
+				981F04B5295C28130023D345 /* BitnoteTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -595,6 +614,14 @@
 				91739A92FAAF9BE55293339F /* Pods_ReviewWidgetExtension.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		981F04B6295C28130023D345 /* BitnoteTests */ = {
+			isa = PBXGroup;
+			children = (
+				981F04B7295C28130023D345 /* BitnoteTests.swift */,
+			);
+			path = BitnoteTests;
 			sourceTree = "<group>";
 		};
 		A478C0A3C8F2B94A60070B04 /* Pods */ = {
@@ -653,13 +680,31 @@
 			productReference = 6FFD1E6A24AE2F20008A52E5 /* Bitnote.app */;
 			productType = "com.apple.product-type.application";
 		};
+		981F04B4295C28130023D345 /* BitnoteTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 981F04BE295C28130023D345 /* Build configuration list for PBXNativeTarget "BitnoteTests" */;
+			buildPhases = (
+				981F04B1295C28130023D345 /* Sources */,
+				981F04B2295C28130023D345 /* Frameworks */,
+				981F04B3295C28130023D345 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				981F04BA295C28130023D345 /* PBXTargetDependency */,
+			);
+			name = BitnoteTests;
+			productName = BitnoteTests;
+			productReference = 981F04B5295C28130023D345 /* BitnoteTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		6FFD1E6224AE2F20008A52E5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1250;
+				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = Tomatoma;
 				TargetAttributes = {
@@ -668,6 +713,10 @@
 					};
 					6FFD1E6924AE2F20008A52E5 = {
 						CreatedOnToolsVersion = 11.5;
+					};
+					981F04B4295C28130023D345 = {
+						CreatedOnToolsVersion = 13.3;
+						TestTargetID = 6FFD1E6924AE2F20008A52E5;
 					};
 				};
 			};
@@ -687,6 +736,7 @@
 			targets = (
 				6FFD1E6924AE2F20008A52E5 /* DeveloperNote */,
 				6F9E74D6273ECC0600533FD6 /* ReviewWidgetExtension */,
+				981F04B4295C28130023D345 /* BitnoteTests */,
 			);
 		};
 /* End PBXProject section */
@@ -726,6 +776,13 @@
 				6F73FE17260CD5A400FADE98 /* SettingTimerCell.xib in Resources */,
 				6F5B32A524B4DA84005B0926 /* GroupListViewController.storyboard in Resources */,
 				6F655D2124CDBF1900402868 /* NoteDrawingViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		981F04B3295C28130023D345 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -909,6 +966,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		981F04B1295C28130023D345 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				981F04B8295C28130023D345 /* BitnoteTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -916,6 +981,11 @@
 			isa = PBXTargetDependency;
 			target = 6F9E74D6273ECC0600533FD6 /* ReviewWidgetExtension */;
 			targetProxy = 6F9E74E2273ECC0E00533FD6 /* PBXContainerItemProxy */;
+		};
+		981F04BA295C28130023D345 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6FFD1E6924AE2F20008A52E5 /* DeveloperNote */;
+			targetProxy = 981F04B9295C28130023D345 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1281,6 +1351,66 @@
 			};
 			name = Release;
 		};
+		981F04BB295C28130023D345 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 56KBBDN6MA;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Jin.com.DeveloperNote.BitnoteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bitnote.app/Bitnote";
+			};
+			name = Debug;
+		};
+		981F04BC295C28130023D345 /* Beta */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 56KBBDN6MA;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Jin.com.DeveloperNote.BitnoteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bitnote.app/Bitnote";
+			};
+			name = Beta;
+		};
+		981F04BD295C28130023D345 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 56KBBDN6MA;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Jin.com.DeveloperNote.BitnoteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bitnote.app/Bitnote";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1310,6 +1440,16 @@
 				6FFD1E7F24AE2F24008A52E5 /* Debug */,
 				6F939BD025F529D700204636 /* Beta */,
 				6FFD1E8024AE2F24008A52E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		981F04BE295C28130023D345 /* Build configuration list for PBXNativeTarget "BitnoteTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				981F04BB295C28130023D345 /* Debug */,
+				981F04BC295C28130023D345 /* Beta */,
+				981F04BD295C28130023D345 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
