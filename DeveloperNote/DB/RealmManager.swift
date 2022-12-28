@@ -6,9 +6,6 @@ import RealmSwift
  
  */
 
-/// uniq id
-typealias UID = String
-
 
 public class RealmManager {
     

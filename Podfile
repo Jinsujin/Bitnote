@@ -10,13 +10,18 @@ target 'DeveloperNote' do
   pod 'Google-Mobile-Ads-SDK'
   pod 'Firebase/Crashlytics'
 
-  pod 'RxSwift', '~> 5'
-  pod 'RxCocoa', '~> 5'
+  pod 'RxSwift'
+  pod 'RxCocoa'
   pod 'RealmSwift'
   pod 'Toast-Swift', '~> 5.0.1'
   pod 'Sketch'
   pod 'SnapKit', '~> 5.0.0'
 
+  target 'BitnoteTests' do
+    # Pods for BitnoteTests
+    pod 'RxSwift'
+    pod 'RxCocoa'
+  end
 end
 
 target 'ReviewWidgetExtension' do

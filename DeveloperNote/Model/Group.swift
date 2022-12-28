@@ -1,4 +1,7 @@
-import UIKit
+import Foundation
+
+/// uniq id
+typealias UID = String
 
 
 struct Group {
@@ -8,7 +11,7 @@ struct Group {
     
     init(){}
     
-    // 그룹생성에 사용
+    /// 그룹생성화면에서 사용
     init(title: String, notelist: [Note]? = nil){
 //        self.id = RealmManager.incrementId(Group.self)
         self.title = title
@@ -21,12 +24,13 @@ struct Group {
         self.notelist = notelist
     }
     
+    /// 그룹 이름 수정할때 사용
      init(original: Group, uptatedTitle: String){
         self = original
         self.title = uptatedTitle
     }
     
-    /** notelist 에서 공부할 노트만 필터해서, notelist 를 업데이트 한다
+    /** 노트목록(notelist) 에서 공부할 노트만 필터해서, notelist 를 업데이트 한다
      
      - 노트 내용이 있는것
      - 노트 내용에서 북마크는 참고를 위한 필드이므로 거른다
@@ -47,32 +51,5 @@ struct Group {
         }
         
         self.notelist = filtered_notelist
-    }
-}
-
-// MARK:- Persistable Protocol
-extension Group: Persistable {
-    /**
-            RealmObject -> Struct
-     */
-    public init(managedObject: RealmGroup) {
-        self.id = managedObject.uid
-        self.title = managedObject.title
-        self.notelist = managedObject.noteList.map({ Note(managedObject: $0) })
-    }
-    
-    /**
-            Struct -> RealmObject
-     */
-    public func managedObject() -> RealmGroup {
-        let realm = RealmGroup()
-        realm.uid = self.id
-        realm.title = self.title
-
-        if let notelist = self.notelist {
-            realm.noteList.append(objectsIn: notelist.compactMap({ $0.managedObject() }))
-        }
-
-        return realm
     }
 }

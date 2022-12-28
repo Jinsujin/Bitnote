@@ -1,6 +1,6 @@
 import UIKit
 
-protocol GroupAddViewDelegate: class {
+protocol GroupAddViewDelegate: AnyObject {
     func saveNewGroup(title: String)
     func editGroup(original: Group, editTitle: String)
 }

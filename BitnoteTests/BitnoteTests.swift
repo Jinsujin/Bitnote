@@ -18,19 +18,58 @@ class BitnoteTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
+    func test_repositoryFetchData_compareCount() {
+        let mockRepository = MockRepository()
+        let expectResult = mockRepository.createItems()
+        let expectation = XCTestExpectation()
+        
+        mockRepository.fetchGroups { groups in
+            XCTAssertEqual(mockRepository.groupList.count, expectResult.count)
+            expectation.fulfill()
         }
+        wait(for: [expectation], timeout: 1.0)
     }
+}
 
+
+class MockRepository: Repository {
+
+    // test property
+    var groupList: [Group] = []
+    
+    @discardableResult
+    func createItems() -> [Group] {
+        let items = [Group(title: "test1"),Group(title: "test2"),Group(title: "test3")]
+        self.groupList = items
+        return items
+    }
+    
+    func getGroup(by indexPath: IndexPath) -> Group {
+        return groupList[indexPath.row]
+    }
+    
+    func fetchGroups(completion: @escaping ([Group]) -> Void) {
+        completion(groupList)
+    }
+    
+    func addGroup(title: String, completion: @escaping ([Group]?) -> Void) {
+        let newGroup = Group(title: title)
+        groupList.append(newGroup)
+        completion(groupList)
+    }
+    
+    func deleteGroup(row: Int, completion: @escaping ([Group]?) -> Void) {
+        groupList.remove(at: row)
+        completion(groupList)
+    }
+    
+    func editGroupTitle(target group: Group, title: String, completion: @escaping ([Group]?) -> Void) {
+        guard let index = groupList.firstIndex(where: { $0.id == group.id }) else {
+            completion(nil)
+            return
+        }
+        groupList.remove(at: index)
+        let updateGroup = Group(original: group, uptatedTitle: title)
+        groupList.insert(updateGroup, at: index)
+    }
 }
