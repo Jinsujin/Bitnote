@@ -1,6 +1,8 @@
 
 <div align="center">
-    <img src="./images/logo-120.png" width="120px" height="120px" style="text-align: center;" />
+    <a href="https://apps.apple.com/kr/app/bitnote-%EB%B0%B1%EC%A7%80-%EC%95%94%EA%B8%B0%EB%B2%95/id1557135753" targer="_blank">
+        <img src="./images/logo-120.png" width="120px" height="120px" style="text-align: center;" />
+    </a>
     <h1 style="text-align: center;">BitNote</h1>
     <img src="https://img.shields.io/badge/iOS-13.0%2B-lightgrey"/>
     <img src="https://img.shields.io/badge/Xcode-13.3-blue"/>
@@ -19,9 +21,9 @@ BitNote는 백지 학습에서 아이디어를 얻어 만든 앱 입니다. 단�
 >
 > `Release`: 2021.3.12
 
-<img src="https://user-images.githubusercontent.com/12508578/209810157-5b6ce8be-a6e4-4fa1-8009-df49a5ce7f6f.png" width="200px"/>
-
-
+<a href="https://apps.apple.com/kr/app/bitnote-%EB%B0%B1%EC%A7%80-%EC%95%94%EA%B8%B0%EB%B2%95/id1557135753" targer="_blank">
+    <img src="https://user-images.githubusercontent.com/12508578/209810157-5b6ce8be-a6e4-4fa1-8009-df49a5ce7f6f.png" width="200px"/>
+</a>
 
 # 사용 방법
 
