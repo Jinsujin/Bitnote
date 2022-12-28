@@ -116,7 +116,11 @@
 		6FFD1E7A24AE2F24008A52E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FFD1E7824AE2F24008A52E5 /* LaunchScreen.storyboard */; };
 		6FFD1E8824AE4BB5008A52E5 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFD1E8724AE4BB5008A52E5 /* Group.swift */; };
 		981F04B8295C28130023D345 /* BitnoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981F04B7295C28130023D345 /* BitnoteTests.swift */; };
+		981F04BF295C414A0023D345 /* GroupListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F655D3A24D14A0D00402868 /* GroupListViewModel.swift */; };
+		981F04C2295C41D10023D345 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981F04C1295C41D10023D345 /* Repository.swift */; };
+		981F04C3295C41EF0023D345 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981F04C1295C41D10023D345 /* Repository.swift */; };
 		98A561C92940A45B00AF6596 /* APIKeyInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98A561C82940A45B00AF6596 /* APIKeyInfo.plist */; };
+		98AE6152295C4297008E8938 /* GroupRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AE6151295C4297008E8938 /* GroupRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -256,7 +260,9 @@
 		91739A92FAAF9BE55293339F /* Pods_ReviewWidgetExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReviewWidgetExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		981F04B5295C28130023D345 /* BitnoteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BitnoteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		981F04B7295C28130023D345 /* BitnoteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitnoteTests.swift; sourceTree = "<group>"; };
+		981F04C1295C41D10023D345 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		98A561C82940A45B00AF6596 /* APIKeyInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKeyInfo.plist; sourceTree = "<group>"; };
+		98AE6151295C4297008E8938 /* GroupRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupRepository.swift; sourceTree = "<group>"; };
 		DF8A88F91669B7D3171323E1 /* Pods-ReviewWidgetExtension.beta.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReviewWidgetExtension.beta.xcconfig"; path = "Target Support Files/Pods-ReviewWidgetExtension/Pods-ReviewWidgetExtension.beta.xcconfig"; sourceTree = "<group>"; };
 		E376ACB91235365C650D1F75 /* Pods-DeveloperNote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeveloperNote.release.xcconfig"; path = "Target Support Files/Pods-DeveloperNote/Pods-DeveloperNote.release.xcconfig"; sourceTree = "<group>"; };
 		F9B9F2C62118CD501D5A38F2 /* Pods_DeveloperNote.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeveloperNote.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -583,6 +589,7 @@
 		6FFD1E6C24AE2F20008A52E5 /* DeveloperNote */ = {
 			isa = PBXGroup;
 			children = (
+				981F04C0295C41B20023D345 /* Repository */,
 				6F4A7DD724D225A8008570A6 /* DeveloperNote.entitlements */,
 				6F4511BE270E089E00128BBD /* Common */,
 				6F37D73826E0F35200243B43 /* Utils */,
@@ -622,6 +629,15 @@
 				981F04B7295C28130023D345 /* BitnoteTests.swift */,
 			);
 			path = BitnoteTests;
+			sourceTree = "<group>";
+		};
+		981F04C0295C41B20023D345 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				981F04C1295C41D10023D345 /* Repository.swift */,
+				98AE6151295C4297008E8938 /* GroupRepository.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		A478C0A3C8F2B94A60070B04 /* Pods */ = {
@@ -906,6 +922,7 @@
 				6F5B32AA24B4E955005B0926 /* NoteListCell.swift in Sources */,
 				6F4A7DD224D21FDE008570A6 /* RealmGroup.swift in Sources */,
 				6F4A7DD624D22277008570A6 /* RealmManager.swift in Sources */,
+				98AE6152295C4297008E8938 /* GroupRepository.swift in Sources */,
 				6F7FADBD26025DA8001FC914 /* BlankPaperPageViewController.swift in Sources */,
 				6F5B32AF24B4EAB6005B0926 /* NoteDetailViewController.swift in Sources */,
 				6F2D238324AF9C9E00F21A60 /* RootTabbarItem.swift in Sources */,
@@ -926,6 +943,7 @@
 				6F612FAC2603E048003A750E /* FindGroupViewController.swift in Sources */,
 				6FFD1E6E24AE2F20008A52E5 /* AppDelegate.swift in Sources */,
 				6F724C30273F91CC00E72353 /* WidgetIntents.intentdefinition in Sources */,
+				981F04C2295C41D10023D345 /* Repository.swift in Sources */,
 				6F6F7518260A58FA00390952 /* SettingLessonViewController.swift in Sources */,
 				6F655CCB24CBAA2500402868 /* SettingLicenseViewController.swift in Sources */,
 				6F34CACD271591EC00339B65 /* Log.swift in Sources */,
@@ -970,7 +988,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				981F04BF295C414A0023D345 /* GroupListViewModel.swift in Sources */,
 				981F04B8295C28130023D345 /* BitnoteTests.swift in Sources */,
+				981F04C3295C41EF0023D345 /* Repository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

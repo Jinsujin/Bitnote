@@ -10,96 +10,53 @@ import Foundation
 import RxSwift
 import RxRelay
 
+
 class GroupListViewModel {
     
-    private var groupDataList: [Group] = []
+    private let repository: Repository
+    var groupListOb = BehaviorRelay<[Group]>(value: [])
     
-    public var groupListOb = BehaviorRelay<[Group]>(value: [])
-    
-    
-    /**
-     초기화
-
-     */
-    init(){
-        fetchGroupFromDB()
+    init(repository: Repository) {
+        self.repository = repository
+        getGroups()
     }
     
-    func fetchGroupFromDB(){
-        if let realm = RealmManager.realm() {
-            let fetchObjects = realm.objects(RealmGroup.self)
-            self.groupDataList = fetchObjects.compactMap({
-                Group(managedObject: $0)
-            })
-        }
-        groupListOb.accept(groupDataList)
-    }
     
-    /**
-        새로운 그룹 추가
-     
-     */
-    func addNewGroup(_ groupTitle: String) {
-        let newGroup = Group(title: groupTitle)
-        groupDataList.append(newGroup)
-        groupListOb.accept(groupDataList)
-        
-        // DB 에 그룹 추가
-        guard let realm = RealmManager.realm() else {
-            return
-        }
-        try! realm.write {
-            realm.add(newGroup.managedObject())
+    func getGroups() {
+        repository.fetchGroups { [weak self] groups in
+            self?.groupListOb.accept(groups)
         }
     }
     
     
-    func deleteGroup(_ row: Int) {
-        let deleteUid = groupDataList[row].id
-        groupDataList.remove(at: row)
-        groupListOb.accept(groupDataList)
-        
-        // DB delete
-        guard let realm = RealmManager.realm(),
-        let fetchGroup = realm.object(ofType: RealmGroup.self, forPrimaryKey: deleteUid) else {
-            return
-        }
-        
-        let childObjects = fetchGroup.noteList
-        try! realm.write {
-            realm.delete(childObjects)
-            realm.delete(fetchGroup)
+    func addNewGroup(_ title: String) {
+        repository.addGroup(title: title) { [weak self] updatedGroups in
+            if let groups = updatedGroups {
+                self?.groupListOb.accept(groups)
+            }
         }
     }
     
-    // indexPath 로 선택한 그룹 반환
+    
+    func deleteGroup(at row: Int) {
+        repository.deleteGroup(row: row) { [weak self] updatedGroups in
+            if let groups = updatedGroups {
+                self?.groupListOb.accept(groups)
+            }
+        }
+    }
+    
+    
     func getGroupByIndexPath(_ indexPath: IndexPath) -> Group {
-        return self.groupDataList[indexPath.row]
+        return repository.getGroup(by: indexPath)
     }
     
-    /**
-     group title 수정
-     
-     */
-    func editGroup(_ selectedGroup: Group, editTitle: String) {
-        let updated = Group(original: selectedGroup, uptatedTitle: editTitle)
-        
-        if let index = groupDataList.firstIndex(where: {
-            $0.id == selectedGroup.id
-        }) {
-            groupDataList.remove(at: index)
-            groupDataList.insert(updated, at: index)
-        }
-        
-        groupListOb.accept(groupDataList)
-        
-        guard let realm = RealmManager.realm() else {
-            return
-        }
-        
-        try! realm.write {
-            realm.create(RealmGroup.self, value: ["uid": updated.id, "title": editTitle], update: .modified)
+    
+    func editGroupTitle(_ selectedGroup: Group, title: String) {
+        repository.editGroupTitle(target: selectedGroup, title: title) { [weak self] updatedGroups in
+            if let groups = updatedGroups {
+                self?.groupListOb.accept(groups)
+            }
         }
     }
-    
 }

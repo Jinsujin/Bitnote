@@ -13,19 +13,21 @@ import RxCocoa
 
 
 class GroupListViewController: AdsBaseViewController {
-    private let viewModel = GroupListViewModel()
-    private let disposeBag = DisposeBag()
-    private lazy var nodataView: NoDataView = {
-        let v = NoDataView(frame: self.view.frame)
-        self.view.addSubview(v)
-        return v
-    }()
     
+    private let viewModel = GroupListViewModel(repository: GroupRepository())
+    private let disposeBag = DisposeBag()
+
     @IBOutlet weak var tableView: UITableView!
     
     private lazy var addGroupButton: UIBarButtonItem = {
         let btn = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(touchedAddGroupButton))
         return btn
+    }()
+    
+    private lazy var nodataView: NoDataView = {
+        let view = NoDataView(frame: self.view.frame)
+        self.view.addSubview(view)
+        return view
     }()
     
     override func viewDidLoad() {
@@ -34,13 +36,12 @@ class GroupListViewController: AdsBaseViewController {
         tableView.delegate = self
         tableView.rowHeight = 60
         self.title = "group_title".localized()
-        
         self.navigationItem.rightBarButtonItem = addGroupButton
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        viewModel.fetchGroupFromDB()
+        viewModel.getGroups()
     }
     
 
@@ -53,7 +54,6 @@ class GroupListViewController: AdsBaseViewController {
         if identifier == NoteListViewController.identifier,
             let notelistVC = segue.destination as? NoteListViewController,
             let selectedCell = sender as? GroupListCell,
-//            let selectedGroup = sender as? Group,
             let selectedIndexPath = tableView.indexPath(for: selectedCell)
         {
             let group = self.viewModel.getGroupByIndexPath(selectedIndexPath)
@@ -67,9 +67,7 @@ class GroupListViewController: AdsBaseViewController {
         let vc = GroupAddViewController()
         vc.delegate = self
         vc.modalPresentationStyle = .overFullScreen
-        present(vc, animated: false) {
-            
-        }
+        present(vc, animated: false)
     }
     
     private func setupBindings(){
@@ -77,29 +75,30 @@ class GroupListViewController: AdsBaseViewController {
         viewModel.groupListOb
             .bind(to: tableView.rx.items(cellIdentifier: "groupListCell", cellType: GroupListCell.self)){ (row, element, cell) in
                 cell.setViewModel(viewModel: element)
-        }
-        .disposed(by: disposeBag)
+            }
+            .disposed(by: disposeBag)
         
         // 뷰 모델의 데이터가 0 일때
         viewModel.groupListOb
-            .map({ $0.count != 0}).bind(to: nodataView.rx.isHidden)
+            .map({ $0.count != 0})
+            .bind(to: nodataView.rx.isHidden)
             .disposed(by: disposeBag)
     }
 }
 
-
+// MARK:- GroupAddViewDelegate
 extension GroupListViewController: GroupAddViewDelegate {
     func saveNewGroup(title: String) {
         self.viewModel.addNewGroup(title)
     }
     
     func editGroup(original: Group, editTitle: String) {
-        self.viewModel.editGroup(original, editTitle: editTitle)
+        self.viewModel.editGroupTitle(original, title: editTitle)
     }
 }
 
 
-//MARK:- UITableViewDataSource
+// MARK:- UITableViewDataSource
 extension GroupListViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
@@ -126,7 +125,7 @@ extension GroupListViewController: UITableViewDelegate {
         let deleteAlert = UIAlertController(title: "group_delete_title".localized(), message: "group_delete_alert_message".localized(), preferredStyle: .alert)
 
         let deleteAction = UIAlertAction(title: "button_delete".localized(), style: .destructive) { (action) in
-            self.viewModel.deleteGroup(indexPath.row)
+            self.viewModel.deleteGroup(at: indexPath.row)
         }
 
         deleteAlert.addAction(deleteAction)
