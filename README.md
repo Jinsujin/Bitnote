@@ -1,8 +1,13 @@
 
-<div style="text-align: center;">
+<div align="center">
     <img src="./images/logo-120.png" width="120px" height="120px" style="text-align: center;" />
     <h1 style="text-align: center;">BitNote</h1>
+    <img src="https://img.shields.io/badge/iOS-13.0%2B-lightgrey"/>
+    <img src="https://img.shields.io/badge/Xcode-13.3-blue"/>
+    <img src="https://img.shields.io/badge/Swift-5.0-orange"/>
 </div>
+
+<p></p>
 
 BitNote는 백지 학습에서 아이디어를 얻어 만든 앱 입니다. 단어카드를 한장씩 넘겨가며 연관된 개념을 떠올리는 방식으로 학습을 할 수 있도록 도와줍니다. 
 
@@ -10,9 +15,12 @@ BitNote는 백지 학습에서 아이디어를 얻어 만든 앱 입니다. 단�
 >
 > `Made by`: Sujin Jin(Rosa)
 >
-> `Release`: 2021.3.12
+> `Develop`: 2021.02.15 ~ 2021.03.08
 >
-> [download on the Appstore](https://apps.apple.com/kr/app/bitnote-%EB%B0%B1%EC%A7%80-%EC%95%94%EA%B8%B0%EB%B2%95/id1557135753)
+> `Release`: 2021.3.12
+
+<img src="https://user-images.githubusercontent.com/12508578/209810157-5b6ce8be-a6e4-4fa1-8009-df49a5ce7f6f.png" width="200px"/>
+
 
 
 # 사용 방법
@@ -27,8 +35,11 @@ BitNote는 백지 학습에서 아이디어를 얻어 만든 앱 입니다. 단�
 
 
 ## 2. Note
-<img src="./images/feat_note.png" width="300px">
-<img src="./images/feat-note-contents.png" width="300px">
+
+<div>
+    <img src="./images/feat_note.png" width="300px">
+    <img src="./images/feat-note-contents.png" width="300px">
+</div>
 
 - 그룹을 선택하면 하위 노트 리스트 화면으로 이동합니다.
 - 노트를 오른쪽 으로 스와이프 하여, 공부완료했음을 체크할 수 있습니다.
