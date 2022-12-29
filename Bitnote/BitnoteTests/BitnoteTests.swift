@@ -52,6 +52,39 @@ class BitnoteTests: XCTestCase {
         XCTAssertEqual(mockRepository.addGroupMethodCallCount, 1)
         XCTAssertEqual(mockRepository.groupList.count, 4)
     }
+    
+    func test_GroupListViewModel_whenEditGroupTitle_matchTitle() {
+        // given
+        mockRepository.groupList = [Group(title: "NewGroup")]
+        
+        // when
+        let indexPath = IndexPath(row: 0, section: 0)
+        let group = sut.getGroup(by: indexPath)
+        XCTAssertNotNil(group)
+        
+        let editTitle = "Edited!"
+        sut.editGroupTitle(group!, title: editTitle)
+        
+        // then
+        XCTAssertEqual(mockRepository.editGroupTitleMethodCallCount, 1)
+        
+        let editedGroup = sut.getGroup(by: indexPath)
+        XCTAssertNotNil(editedGroup)
+        XCTAssertEqual(editedGroup!.title, editTitle)
+    }
+    
+    func test_GroupListViewModel_whenDeleteGroup() {
+        // given
+        mockRepository.groupList = [Group(title: "NewGroup")]
+        let indexPath = IndexPath(row: 0, section: 0)
+        
+        // when
+        sut.deleteGroup(at: indexPath.row)
+        
+        // then
+        XCTAssertEqual(mockRepository.deleteGroupMethodCallCount, 1)
+        XCTAssertNil(sut.getGroup(by: indexPath))
+    }
 }
 
 
@@ -73,9 +106,9 @@ class MockRepository: Repository {
         return items
     }
     
-    func getGroup(by indexPath: IndexPath) -> Group {
+    func getGroup(at index: Int) -> Group? {
         getGroupMethodCallCount += 1
-        return groupList[indexPath.row]
+        return groupList[safe: index]
     }
     
     func fetchGroups(completion: @escaping ([Group]) -> Void) {

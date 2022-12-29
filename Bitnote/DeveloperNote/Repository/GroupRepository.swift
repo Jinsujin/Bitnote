@@ -5,8 +5,8 @@ class GroupRepository: Repository {
 
     private var groupDataList: [Group] = []
     
-    func getGroup(by indexPath: IndexPath) -> Group {
-        return groupDataList[indexPath.row]
+    func getGroup(at index: Int) -> Group? {
+        return groupDataList[safe: index]
     }
     
     func fetchGroups(completion: @escaping ([Group]) -> Void) {
