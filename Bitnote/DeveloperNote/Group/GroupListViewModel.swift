@@ -47,8 +47,8 @@ class GroupListViewModel {
     }
     
     
-    func getGroupByIndexPath(_ indexPath: IndexPath) -> Group {
-        return repository.getGroup(by: indexPath)
+    func getGroup(by indexPath: IndexPath) -> Group? {
+        return repository.getGroup(at: indexPath.row)
     }
     
     

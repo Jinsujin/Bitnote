@@ -56,7 +56,9 @@ class GroupListViewController: AdsBaseViewController {
             let selectedCell = sender as? GroupListCell,
             let selectedIndexPath = tableView.indexPath(for: selectedCell)
         {
-            let group = self.viewModel.getGroupByIndexPath(selectedIndexPath)
+            guard let group = self.viewModel.getGroup(by: selectedIndexPath) else {
+                return
+            }
             let noteListViewModel = NoteListViewModel(group)
             notelistVC.viewModel = noteListViewModel
         }
@@ -140,7 +142,7 @@ extension GroupListViewController: UITableViewDelegate {
      * 3. 테이블 뷰 갱신
      */
     private func handleEditCategory(_ indexPath: IndexPath) -> Bool {
-        let selectedGroup = viewModel.getGroupByIndexPath(indexPath)
+        let selectedGroup = viewModel.getGroup(by: indexPath)
         
         let vc = GroupAddViewController(selectedGroup: selectedGroup)
         vc.delegate = self
