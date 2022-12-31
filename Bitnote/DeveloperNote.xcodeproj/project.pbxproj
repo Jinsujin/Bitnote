@@ -122,6 +122,7 @@
 		9832394C29607CC3007D627E /* NoteDrawingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9832394A29607CC3007D627E /* NoteDrawingViewController.xib */; };
 		9832394D29607CC3007D627E /* NoteDrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9832394B29607CC3007D627E /* NoteDrawingViewController.swift */; };
 		9832394E29607E11007D627E /* FindGroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC1DA5B2601266A006AF877 /* FindGroupViewModel.swift */; };
+		98323954296082F1007D627E /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98323953296082F1007D627E /* ColorAssets.xcassets */; };
 		98A561C92940A45B00AF6596 /* APIKeyInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98A561C82940A45B00AF6596 /* APIKeyInfo.plist */; };
 		98AE6152295C4297008E8938 /* GroupRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AE6151295C4297008E8938 /* GroupRepository.swift */; };
 		98AE6153295C4B52008E8938 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFD1E8724AE4BB5008A52E5 /* Group.swift */; };
@@ -276,6 +277,7 @@
 		9832394429607C18007D627E /* SettingsListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsListCell.swift; sourceTree = "<group>"; };
 		9832394A29607CC3007D627E /* NoteDrawingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NoteDrawingViewController.xib; path = DeveloperNote/Screen/Note/Components/NoteDrawingViewController.xib; sourceTree = SOURCE_ROOT; };
 		9832394B29607CC3007D627E /* NoteDrawingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoteDrawingViewController.swift; path = DeveloperNote/Screen/Note/Components/NoteDrawingViewController.swift; sourceTree = SOURCE_ROOT; };
+		98323953296082F1007D627E /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
 		98A561C82940A45B00AF6596 /* APIKeyInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKeyInfo.plist; sourceTree = "<group>"; };
 		98AE6151295C4297008E8938 /* GroupRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupRepository.swift; sourceTree = "<group>"; };
 		98AE6156295C5378008E8938 /* Persistable+Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Persistable+Group.swift"; sourceTree = "<group>"; };
@@ -320,14 +322,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6F2D237F24AF9B8E00F21A60 /* RootTabBarController */ = {
+		6F2D237F24AF9B8E00F21A60 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
 				6F2D238024AF9BB700F21A60 /* RootTabBarController.swift */,
 				6F2D238224AF9C9E00F21A60 /* RootTabbarItem.swift */,
 				6F2D238424AF9FE600F21A60 /* BaseNavigationController.swift */,
 			);
-			path = RootTabBarController;
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 		6F34CA8527147E9200339B65 /* Components */ = {
@@ -364,6 +366,7 @@
 			isa = PBXGroup;
 			children = (
 				6F73FE44260CEE7D00FADE98 /* SettingConfig.swift */,
+				98323952296082A8007D627E /* Resource */,
 				6F37D73826E0F35200243B43 /* Utils */,
 				98323930296077E2007D627E /* Properties */,
 				6F4511C1270E08BF00128BBD /* Extensions */,
@@ -637,7 +640,6 @@
 				6FFD1E6D24AE2F20008A52E5 /* AppDelegate.swift */,
 				6FFD1E6F24AE2F20008A52E5 /* SceneDelegate.swift */,
 				6FFD1E7B24AE2F24008A52E5 /* Info.plist */,
-				6FFD1E7624AE2F24008A52E5 /* Assets.xcassets */,
 				6F939BCB25F5194000204636 /* GoogleService-Info.plist */,
 				98A561C82940A45B00AF6596 /* APIKeyInfo.plist */,
 			);
@@ -655,12 +657,12 @@
 		9832393229607838007D627E /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				9832395129608277007D627E /* Launch */,
+				6F2D237F24AF9B8E00F21A60 /* TabBar */,
 				6FC1D9FA2601086A006AF877 /* Group */,
 				6FC1D9FB26010892006AF877 /* Note */,
 				6F6C69B424CA1572002788C0 /* Setting */,
 				6FC1D9F826010851006AF877 /* Study */,
-				6FFD1E7824AE2F24008A52E5 /* LaunchScreen.storyboard */,
-				6F2D237F24AF9B8E00F21A60 /* RootTabBarController */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -770,6 +772,23 @@
 				98AE615B295C53EA008E8938 /* Persistable+Log.swift */,
 			);
 			path = Persistable;
+			sourceTree = "<group>";
+		};
+		9832395129608277007D627E /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				6FFD1E7824AE2F24008A52E5 /* LaunchScreen.storyboard */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		98323952296082A8007D627E /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				6FFD1E7624AE2F24008A52E5 /* Assets.xcassets */,
+				98323953296082F1007D627E /* ColorAssets.xcassets */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		A478C0A3C8F2B94A60070B04 /* Pods */ = {
@@ -926,6 +945,7 @@
 				6F6C691924C4DBFE002788C0 /* NoteAddImageViewController.xib in Resources */,
 				98A561C92940A45B00AF6596 /* APIKeyInfo.plist in Resources */,
 				6F6C697B24C8E990002788C0 /* NoteDetailBookmarkCell.xib in Resources */,
+				98323954296082F1007D627E /* ColorAssets.xcassets in Resources */,
 				9832394129607B97007D627E /* SettingLicenseViewController.xib in Resources */,
 				6F73FE17260CD5A400FADE98 /* SettingTimerCell.xib in Resources */,
 				6F5B32A524B4DA84005B0926 /* GroupListViewController.storyboard in Resources */,
