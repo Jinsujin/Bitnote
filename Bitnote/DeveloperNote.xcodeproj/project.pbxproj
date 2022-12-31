@@ -38,16 +38,8 @@
 		6F612FAC2603E048003A750E /* FindGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F612FAB2603E048003A750E /* FindGroupViewController.swift */; };
 		6F655CC124CBA1D900402868 /* BookmarkInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F655CC024CBA1D900402868 /* BookmarkInputView.swift */; };
 		6F655CC324CBA2EA00402868 /* NoteDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F655CC224CBA2EA00402868 /* NoteDetailViewModel.swift */; };
-		6F655CC724CBAA1300402868 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F655CC524CBAA1300402868 /* SettingsViewController.swift */; };
 		6F655CC824CBAA1300402868 /* SettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F655CC624CBAA1300402868 /* SettingsViewController.storyboard */; };
 		6F655CCB24CBAA2500402868 /* SettingLicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F655CC924CBAA2500402868 /* SettingLicenseViewController.swift */; };
-		6F655CCC24CBAA2500402868 /* SettingLicenseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F655CCA24CBAA2500402868 /* SettingLicenseViewController.xib */; };
-		6F655D1824CDAF3B00402868 /* SettingsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F655D1624CDAF3A00402868 /* SettingsListCell.swift */; };
-		6F655D1924CDAF3B00402868 /* SettingsListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F655D1724CDAF3A00402868 /* SettingsListCell.xib */; };
-		6F655D1C24CDB05300402868 /* SettingsListAppVersionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F655D1A24CDB05300402868 /* SettingsListAppVersionCell.swift */; };
-		6F655D1D24CDB05300402868 /* SettingsListAppVersionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F655D1B24CDB05300402868 /* SettingsListAppVersionCell.xib */; };
-		6F655D2024CDBF1900402868 /* NoteDrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F655D1E24CDBF1900402868 /* NoteDrawingViewController.swift */; };
-		6F655D2124CDBF1900402868 /* NoteDrawingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F655D1F24CDBF1900402868 /* NoteDrawingViewController.xib */; };
 		6F655D2424CDC7FC00402868 /* DrawingColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F655D2224CDC7FC00402868 /* DrawingColorCell.swift */; };
 		6F655D2524CDC7FC00402868 /* DrawingColorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F655D2324CDC7FC00402868 /* DrawingColorCell.xib */; };
 		6F655D2724CDC8D800402868 /* DrawingCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F655D2624CDC8D800402868 /* DrawingCanvasView.swift */; };
@@ -120,6 +112,16 @@
 		981F04BF295C414A0023D345 /* GroupListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F655D3A24D14A0D00402868 /* GroupListViewModel.swift */; };
 		981F04C2295C41D10023D345 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981F04C1295C41D10023D345 /* Repository.swift */; };
 		981F04C3295C41EF0023D345 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981F04C1295C41D10023D345 /* Repository.swift */; };
+		9832393129607815007D627E /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AE6161295D9768008E8938 /* Collection+Extensions.swift */; };
+		9832393929607AFB007D627E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9832393829607AFB007D627E /* SettingsViewController.swift */; };
+		9832393D29607B86007D627E /* SettingsListAppVersionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9832393A29607B86007D627E /* SettingsListAppVersionCell.xib */; };
+		9832393E29607B86007D627E /* SettingsListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9832393B29607B86007D627E /* SettingsListCell.xib */; };
+		9832393F29607B86007D627E /* SettingsListAppVersionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9832393C29607B86007D627E /* SettingsListAppVersionCell.swift */; };
+		9832394129607B97007D627E /* SettingLicenseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9832394029607B97007D627E /* SettingLicenseViewController.xib */; };
+		9832394529607C18007D627E /* SettingsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9832394429607C18007D627E /* SettingsListCell.swift */; };
+		9832394C29607CC3007D627E /* NoteDrawingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9832394A29607CC3007D627E /* NoteDrawingViewController.xib */; };
+		9832394D29607CC3007D627E /* NoteDrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9832394B29607CC3007D627E /* NoteDrawingViewController.swift */; };
+		9832394E29607E11007D627E /* FindGroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC1DA5B2601266A006AF877 /* FindGroupViewModel.swift */; };
 		98A561C92940A45B00AF6596 /* APIKeyInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98A561C82940A45B00AF6596 /* APIKeyInfo.plist */; };
 		98AE6152295C4297008E8938 /* GroupRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AE6151295C4297008E8938 /* GroupRepository.swift */; };
 		98AE6153295C4B52008E8938 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFD1E8724AE4BB5008A52E5 /* Group.swift */; };
@@ -133,7 +135,6 @@
 		98AE615F295C5472008E8938 /* Persistable+Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AE615B295C53EA008E8938 /* Persistable+Log.swift */; };
 		98AE6160295C5503008E8938 /* SettingConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F73FE44260CEE7D00FADE98 /* SettingConfig.swift */; };
 		98AE6162295D9769008E8938 /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AE6161295D9768008E8938 /* Collection+Extensions.swift */; };
-		98AE6163295D9771008E8938 /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AE6161295D9768008E8938 /* Collection+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -203,16 +204,8 @@
 		6F612FAB2603E048003A750E /* FindGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindGroupViewController.swift; sourceTree = "<group>"; };
 		6F655CC024CBA1D900402868 /* BookmarkInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkInputView.swift; sourceTree = "<group>"; };
 		6F655CC224CBA2EA00402868 /* NoteDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailViewModel.swift; sourceTree = "<group>"; };
-		6F655CC524CBAA1300402868 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = DeveloperNote/Setting/SettingsViewController.swift; sourceTree = SOURCE_ROOT; };
-		6F655CC624CBAA1300402868 /* SettingsViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SettingsViewController.storyboard; path = DeveloperNote/Storyboard/SettingsViewController.storyboard; sourceTree = SOURCE_ROOT; };
-		6F655CC924CBAA2500402868 /* SettingLicenseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingLicenseViewController.swift; path = DeveloperNote/Setting/Views/SettingLicenseViewController.swift; sourceTree = SOURCE_ROOT; };
-		6F655CCA24CBAA2500402868 /* SettingLicenseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingLicenseViewController.xib; path = DeveloperNote/Setting/Views/SettingLicenseViewController.xib; sourceTree = SOURCE_ROOT; };
-		6F655D1624CDAF3A00402868 /* SettingsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsListCell.swift; path = DeveloperNote/Setting/Cells/SettingsListCell.swift; sourceTree = SOURCE_ROOT; };
-		6F655D1724CDAF3A00402868 /* SettingsListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SettingsListCell.xib; path = DeveloperNote/Setting/Cells/SettingsListCell.xib; sourceTree = SOURCE_ROOT; };
-		6F655D1A24CDB05300402868 /* SettingsListAppVersionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsListAppVersionCell.swift; path = DeveloperNote/Setting/Cells/SettingsListAppVersionCell.swift; sourceTree = SOURCE_ROOT; };
-		6F655D1B24CDB05300402868 /* SettingsListAppVersionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SettingsListAppVersionCell.xib; path = DeveloperNote/Setting/Cells/SettingsListAppVersionCell.xib; sourceTree = SOURCE_ROOT; };
-		6F655D1E24CDBF1900402868 /* NoteDrawingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NoteDrawingViewController.swift; path = DeveloperNote/Note/Views/NoteDrawingViewController.swift; sourceTree = SOURCE_ROOT; };
-		6F655D1F24CDBF1900402868 /* NoteDrawingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = NoteDrawingViewController.xib; path = DeveloperNote/Note/Views/NoteDrawingViewController.xib; sourceTree = SOURCE_ROOT; };
+		6F655CC624CBAA1300402868 /* SettingsViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SettingsViewController.storyboard; path = DeveloperNote/Screen/Setting/SettingsViewController.storyboard; sourceTree = SOURCE_ROOT; };
+		6F655CC924CBAA2500402868 /* SettingLicenseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingLicenseViewController.swift; path = DeveloperNote/Screen/Setting/License/SettingLicenseViewController.swift; sourceTree = SOURCE_ROOT; };
 		6F655D2224CDC7FC00402868 /* DrawingColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingColorCell.swift; sourceTree = "<group>"; };
 		6F655D2324CDC7FC00402868 /* DrawingColorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DrawingColorCell.xib; sourceTree = "<group>"; };
 		6F655D2624CDC8D800402868 /* DrawingCanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingCanvasView.swift; sourceTree = "<group>"; };
@@ -275,6 +268,14 @@
 		981F04B5295C28130023D345 /* BitnoteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BitnoteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		981F04B7295C28130023D345 /* BitnoteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitnoteTests.swift; sourceTree = "<group>"; };
 		981F04C1295C41D10023D345 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		9832393829607AFB007D627E /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		9832393A29607B86007D627E /* SettingsListAppVersionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsListAppVersionCell.xib; sourceTree = "<group>"; };
+		9832393B29607B86007D627E /* SettingsListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsListCell.xib; sourceTree = "<group>"; };
+		9832393C29607B86007D627E /* SettingsListAppVersionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsListAppVersionCell.swift; sourceTree = "<group>"; };
+		9832394029607B97007D627E /* SettingLicenseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingLicenseViewController.xib; sourceTree = "<group>"; };
+		9832394429607C18007D627E /* SettingsListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsListCell.swift; sourceTree = "<group>"; };
+		9832394A29607CC3007D627E /* NoteDrawingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NoteDrawingViewController.xib; path = DeveloperNote/Screen/Note/Components/NoteDrawingViewController.xib; sourceTree = SOURCE_ROOT; };
+		9832394B29607CC3007D627E /* NoteDrawingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoteDrawingViewController.swift; path = DeveloperNote/Screen/Note/Components/NoteDrawingViewController.swift; sourceTree = SOURCE_ROOT; };
 		98A561C82940A45B00AF6596 /* APIKeyInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKeyInfo.plist; sourceTree = "<group>"; };
 		98AE6151295C4297008E8938 /* GroupRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupRepository.swift; sourceTree = "<group>"; };
 		98AE6156295C5378008E8938 /* Persistable+Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Persistable+Group.swift"; sourceTree = "<group>"; };
@@ -329,7 +330,7 @@
 			path = RootTabBarController;
 			sourceTree = "<group>";
 		};
-		6F34CA8527147E9200339B65 /* Views */ = {
+		6F34CA8527147E9200339B65 /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				6FA67F53260DB91C0066C67B /* TimerCountView.swift */,
@@ -338,14 +339,13 @@
 				6F7FADB5260257E7001FC914 /* StudyFinishViewController.swift */,
 				6F34CA9E2715451F00339B65 /* StudyHelpPopUpViewController.swift */,
 			);
-			path = Views;
+			path = Components;
 			sourceTree = "<group>";
 		};
 		6F37D73826E0F35200243B43 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				6F37D73926E0F38D00243B43 /* Locale.swift */,
-				98AE6161295D9768008E8938 /* Collection+Extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -360,20 +360,22 @@
 			path = Blink;
 			sourceTree = "<group>";
 		};
-		6F4511BE270E089E00128BBD /* Common */ = {
+		6F4511BE270E089E00128BBD /* Global */ = {
 			isa = PBXGroup;
 			children = (
 				6F73FE44260CEE7D00FADE98 /* SettingConfig.swift */,
-				6F612FA62603D19F003A750E /* AppProperties.swift */,
+				6F37D73826E0F35200243B43 /* Utils */,
+				98323930296077E2007D627E /* Properties */,
 				6F4511C1270E08BF00128BBD /* Extensions */,
-				6F4A7DDC24D3920E008570A6 /* views */,
+				6F4A7DDC24D3920E008570A6 /* Views */,
 			);
-			path = Common;
+			path = Global;
 			sourceTree = "<group>";
 		};
 		6F4511C1270E08BF00128BBD /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				98AE6161295D9768008E8938 /* Collection+Extensions.swift */,
 				6F6C690424C23779002788C0 /* Extensions.swift */,
 			);
 			path = Extensions;
@@ -399,97 +401,71 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		6F4A7DDC24D3920E008570A6 /* views */ = {
+		6F4A7DDC24D3920E008570A6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				6F4A7DDD24D39315008570A6 /* NoDataView.swift */,
 				6FFD1E7124AE2F20008A52E5 /* AdsBaseViewController.swift */,
 				6F9DB04226F3A26400D55A88 /* CustomStyledButton.swift */,
 			);
-			path = views;
+			path = Views;
 			sourceTree = "<group>";
 		};
-		6F655D1524CDAE8700402868 /* Cells */ = {
+		6F655D1524CDAE8700402868 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				6F655D1624CDAF3A00402868 /* SettingsListCell.swift */,
-				6F655D1724CDAF3A00402868 /* SettingsListCell.xib */,
-				6F655D1A24CDB05300402868 /* SettingsListAppVersionCell.swift */,
-				6F655D1B24CDB05300402868 /* SettingsListAppVersionCell.xib */,
+				9832393C29607B86007D627E /* SettingsListAppVersionCell.swift */,
+				9832393A29607B86007D627E /* SettingsListAppVersionCell.xib */,
+				9832393B29607B86007D627E /* SettingsListCell.xib */,
+				9832394429607C18007D627E /* SettingsListCell.swift */,
 				6F6F7537260A6BC000390952 /* SwitchButtonCell.swift */,
 				6F6F7538260A6BC000390952 /* SwitchButtonCell.xib */,
 				6F73FE14260CD5A300FADE98 /* SettingTimerCell.swift */,
 				6F73FE15260CD5A400FADE98 /* SettingTimerCell.xib */,
 			);
-			path = Cells;
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		6F655D3724D148A500402868 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9832394F29607E4B007D627E /* Persistable */,
 				6FFD1E8724AE4BB5008A52E5 /* Group.swift */,
 				6F655D3824D148C300402868 /* Note.swift */,
 				6F34CACC271591EC00339B65 /* Log.swift */,
-				98AE6156295C5378008E8938 /* Persistable+Group.swift */,
-				98AE6158295C53B4008E8938 /* Persistable+Note.swift */,
-				98AE615B295C53EA008E8938 /* Persistable+Log.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		6F655D3E24D1C0F500402868 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				6F655CC224CBA2EA00402868 /* NoteDetailViewModel.swift */,
-				6F655D3C24D1B9B300402868 /* NoteListViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		6F655D4024D1C13500402868 /* Storyboard */ = {
-			isa = PBXGroup;
-			children = (
-				6F655CC624CBAA1300402868 /* SettingsViewController.storyboard */,
-				6F5B32A424B4DA84005B0926 /* GroupListViewController.storyboard */,
-				6FFD1E7824AE2F24008A52E5 /* LaunchScreen.storyboard */,
-			);
-			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		6F6C69B424CA1572002788C0 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
-				6F655D1524CDAE8700402868 /* Cells */,
-				6F6C69B924CA2911002788C0 /* Views */,
-				6F655CC524CBAA1300402868 /* SettingsViewController.swift */,
+				9832393829607AFB007D627E /* SettingsViewController.swift */,
+				6F655CC624CBAA1300402868 /* SettingsViewController.storyboard */,
+				9832394329607BD8007D627E /* Lesson */,
+				9832394229607BAB007D627E /* License */,
+				6F655D1524CDAE8700402868 /* Cell */,
+				6F6C69B924CA2911002788C0 /* Components */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
 		};
-		6F6C69B924CA2911002788C0 /* Views */ = {
+		6F6C69B924CA2911002788C0 /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				6F37D7B226E126C000243B43 /* TimePickerView.swift */,
-				6F655CC924CBAA2500402868 /* SettingLicenseViewController.swift */,
-				6F655CCA24CBAA2500402868 /* SettingLicenseViewController.xib */,
-				6F6F7517260A58FA00390952 /* SettingLessonViewController.swift */,
 			);
-			path = Views;
+			path = Components;
 			sourceTree = "<group>";
 		};
-		6F9DB02026F26B4200D55A88 /* Views */ = {
+		6F9DB02026F26B4200D55A88 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				6F9DB03A26F2F44500D55A88 /* NoteDetailTitleHeaderView.swift */,
 				6F6C690B24C259D6002788C0 /* NoteFloatingViewController.swift */,
 				6F655CC024CBA1D900402868 /* BookmarkInputView.swift */,
-				6F6C690D24C3A7F3002788C0 /* NoteAddTextViewController.swift */,
-				6F6C690E24C3A7F3002788C0 /* NoteAddTextViewController.xib */,
-				6F6C691624C4DBFD002788C0 /* NoteAddImageViewController.swift */,
-				6F6C691724C4DBFD002788C0 /* NoteAddImageViewController.xib */,
-				6F655D1E24CDBF1900402868 /* NoteDrawingViewController.swift */,
-				6F655D1F24CDBF1900402868 /* NoteDrawingViewController.xib */,
 			);
-			path = Views;
+			path = Components;
 			sourceTree = "<group>";
 		};
 		6F9DB03D26F3701400D55A88 /* Add */ = {
@@ -516,14 +492,12 @@
 		6FC1D9F826010851006AF877 /* Study */ = {
 			isa = PBXGroup;
 			children = (
-				6F34CAD22715DEBC00339B65 /* ReviewLessonViewModel.swift */,
-				6F7FADBF26027ADC001FC914 /* StudyFinishViewModel.swift */,
-				6F34CA8527147E9200339B65 /* Views */,
+				6FC1DA3726010EA2006AF877 /* ReviewLessonViewController.swift */,
+				6FC1DA5426011A26006AF877 /* ReviewLessonViewController.storyboard */,
+				6F34CA8527147E9200339B65 /* Components */,
 				6F3C915826D58C1000035683 /* Blink */,
 				6FC1DA8C260139F2006AF877 /* BlankPaper */,
 				6FC1DA5726012555006AF877 /* FindGroup */,
-				6FC1DA3726010EA2006AF877 /* ReviewLessonViewController.swift */,
-				6FC1DA5426011A26006AF877 /* ReviewLessonViewController.storyboard */,
 			);
 			path = Study;
 			sourceTree = "<group>";
@@ -531,10 +505,10 @@
 		6FC1D9FA2601086A006AF877 /* Group */ = {
 			isa = PBXGroup;
 			children = (
-				6F655D3A24D14A0D00402868 /* GroupListViewModel.swift */,
-				6F9DB03D26F3701400D55A88 /* Add */,
+				6F5B32A424B4DA84005B0926 /* GroupListViewController.storyboard */,
 				6F5B32A224B4DA69005B0926 /* GroupListViewController.swift */,
-				6F5B32A724B4E01D005B0926 /* GroupListCell.swift */,
+				98323933296078FE007D627E /* Cell */,
+				6F9DB03D26F3701400D55A88 /* Add */,
 			);
 			path = Group;
 			sourceTree = "<group>";
@@ -542,13 +516,13 @@
 		6FC1D9FB26010892006AF877 /* Note */ = {
 			isa = PBXGroup;
 			children = (
-				6F655D3E24D1C0F500402868 /* ViewModel */,
-				6FC1D9FC260108A4006AF877 /* Cell */,
-				6F9DB02026F26B4200D55A88 /* Views */,
 				6F5B32AB24B4E9BB005B0926 /* NoteListViewController.swift */,
-				6F5B32AD24B4EAB6005B0926 /* NoteDetailViewController.swift */,
-				6F5B32A924B4E955005B0926 /* NoteListCell.swift */,
-				6F9DB03A26F2F44500D55A88 /* NoteDetailTitleHeaderView.swift */,
+				9832394929607CA4007D627E /* DrawingImage */,
+				9832394829607C65007D627E /* SelectImage */,
+				9832394729607C55007D627E /* WriteText */,
+				9832394629607C34007D627E /* Detail */,
+				6FC1D9FC260108A4006AF877 /* Cell */,
+				6F9DB02026F26B4200D55A88 /* Components */,
 			);
 			path = Note;
 			sourceTree = "<group>";
@@ -556,6 +530,7 @@
 		6FC1D9FC260108A4006AF877 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				6F5B32A924B4E955005B0926 /* NoteListCell.swift */,
 				6F655D2224CDC7FC00402868 /* DrawingColorCell.swift */,
 				6F655D2324CDC7FC00402868 /* DrawingColorCell.xib */,
 				6F655D2624CDC8D800402868 /* DrawingCanvasView.swift */,
@@ -574,7 +549,6 @@
 		6FC1DA5726012555006AF877 /* FindGroup */ = {
 			isa = PBXGroup;
 			children = (
-				6FC1DA5B2601266A006AF877 /* FindGroupViewModel.swift */,
 				6F612FAB2603E048003A750E /* FindGroupViewController.swift */,
 			);
 			path = FindGroup;
@@ -615,25 +589,13 @@
 		6FFD1E6C24AE2F20008A52E5 /* DeveloperNote */ = {
 			isa = PBXGroup;
 			children = (
-				981F04C0295C41B20023D345 /* Repository */,
-				6F4A7DD724D225A8008570A6 /* DeveloperNote.entitlements */,
-				6F4511BE270E089E00128BBD /* Common */,
-				6F37D73826E0F35200243B43 /* Utils */,
+				9832392F296074B6007D627E /* Support */,
+				6F4511BE270E089E00128BBD /* Global */,
 				6F4A7DDA24D34AAE008570A6 /* DB */,
+				981F04C0295C41B20023D345 /* Repository */,
 				6F655D3724D148A500402868 /* Model */,
-				6F655D4024D1C13500402868 /* Storyboard */,
-				6F2D237F24AF9B8E00F21A60 /* RootTabBarController */,
-				6FC1D9FA2601086A006AF877 /* Group */,
-				6FC1D9FB26010892006AF877 /* Note */,
-				6F6C69B424CA1572002788C0 /* Setting */,
-				6FC1D9F826010851006AF877 /* Study */,
-				6FFD1E6D24AE2F20008A52E5 /* AppDelegate.swift */,
-				6FFD1E6F24AE2F20008A52E5 /* SceneDelegate.swift */,
-				6FFD1E7624AE2F24008A52E5 /* Assets.xcassets */,
-				6F939BCB25F5194000204636 /* GoogleService-Info.plist */,
-				6FFD1E7B24AE2F24008A52E5 /* Info.plist */,
-				6F92429526DE6D63002022B3 /* Localizable.strings */,
-				98A561C82940A45B00AF6596 /* APIKeyInfo.plist */,
+				98323934296079AA007D627E /* ViewModel */,
+				9832393229607838007D627E /* Screen */,
 			);
 			path = DeveloperNote;
 			sourceTree = "<group>";
@@ -665,6 +627,149 @@
 				98AE6151295C4297008E8938 /* GroupRepository.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		9832392F296074B6007D627E /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				6F4A7DD724D225A8008570A6 /* DeveloperNote.entitlements */,
+				6F92429526DE6D63002022B3 /* Localizable.strings */,
+				6FFD1E6D24AE2F20008A52E5 /* AppDelegate.swift */,
+				6FFD1E6F24AE2F20008A52E5 /* SceneDelegate.swift */,
+				6FFD1E7B24AE2F24008A52E5 /* Info.plist */,
+				6FFD1E7624AE2F24008A52E5 /* Assets.xcassets */,
+				6F939BCB25F5194000204636 /* GoogleService-Info.plist */,
+				98A561C82940A45B00AF6596 /* APIKeyInfo.plist */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		98323930296077E2007D627E /* Properties */ = {
+			isa = PBXGroup;
+			children = (
+				6F612FA62603D19F003A750E /* AppProperties.swift */,
+			);
+			path = Properties;
+			sourceTree = "<group>";
+		};
+		9832393229607838007D627E /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				6FC1D9FA2601086A006AF877 /* Group */,
+				6FC1D9FB26010892006AF877 /* Note */,
+				6F6C69B424CA1572002788C0 /* Setting */,
+				6FC1D9F826010851006AF877 /* Study */,
+				6FFD1E7824AE2F24008A52E5 /* LaunchScreen.storyboard */,
+				6F2D237F24AF9B8E00F21A60 /* RootTabBarController */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		98323933296078FE007D627E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6F5B32A724B4E01D005B0926 /* GroupListCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		98323934296079AA007D627E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9832393729607A95007D627E /* Study */,
+				98323936296079FE007D627E /* Note */,
+				98323935296079F4007D627E /* Group */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		98323935296079F4007D627E /* Group */ = {
+			isa = PBXGroup;
+			children = (
+				6FC1DA5B2601266A006AF877 /* FindGroupViewModel.swift */,
+				6F655D3A24D14A0D00402868 /* GroupListViewModel.swift */,
+			);
+			path = Group;
+			sourceTree = "<group>";
+		};
+		98323936296079FE007D627E /* Note */ = {
+			isa = PBXGroup;
+			children = (
+				6F655CC224CBA2EA00402868 /* NoteDetailViewModel.swift */,
+				6F655D3C24D1B9B300402868 /* NoteListViewModel.swift */,
+			);
+			path = Note;
+			sourceTree = "<group>";
+		};
+		9832393729607A95007D627E /* Study */ = {
+			isa = PBXGroup;
+			children = (
+				6F34CAD22715DEBC00339B65 /* ReviewLessonViewModel.swift */,
+				6F7FADBF26027ADC001FC914 /* StudyFinishViewModel.swift */,
+			);
+			path = Study;
+			sourceTree = "<group>";
+		};
+		9832394229607BAB007D627E /* License */ = {
+			isa = PBXGroup;
+			children = (
+				9832394029607B97007D627E /* SettingLicenseViewController.xib */,
+				6F655CC924CBAA2500402868 /* SettingLicenseViewController.swift */,
+			);
+			path = License;
+			sourceTree = "<group>";
+		};
+		9832394329607BD8007D627E /* Lesson */ = {
+			isa = PBXGroup;
+			children = (
+				6F6F7517260A58FA00390952 /* SettingLessonViewController.swift */,
+			);
+			path = Lesson;
+			sourceTree = "<group>";
+		};
+		9832394629607C34007D627E /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				6F5B32AD24B4EAB6005B0926 /* NoteDetailViewController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		9832394729607C55007D627E /* WriteText */ = {
+			isa = PBXGroup;
+			children = (
+				6F6C690D24C3A7F3002788C0 /* NoteAddTextViewController.swift */,
+				6F6C690E24C3A7F3002788C0 /* NoteAddTextViewController.xib */,
+			);
+			path = WriteText;
+			sourceTree = "<group>";
+		};
+		9832394829607C65007D627E /* SelectImage */ = {
+			isa = PBXGroup;
+			children = (
+				6F6C691624C4DBFD002788C0 /* NoteAddImageViewController.swift */,
+				6F6C691724C4DBFD002788C0 /* NoteAddImageViewController.xib */,
+			);
+			path = SelectImage;
+			sourceTree = "<group>";
+		};
+		9832394929607CA4007D627E /* DrawingImage */ = {
+			isa = PBXGroup;
+			children = (
+				9832394B29607CC3007D627E /* NoteDrawingViewController.swift */,
+				9832394A29607CC3007D627E /* NoteDrawingViewController.xib */,
+			);
+			path = DrawingImage;
+			sourceTree = "<group>";
+		};
+		9832394F29607E4B007D627E /* Persistable */ = {
+			isa = PBXGroup;
+			children = (
+				98AE6156295C5378008E8938 /* Persistable+Group.swift */,
+				98AE6158295C53B4008E8938 /* Persistable+Note.swift */,
+				98AE615B295C53EA008E8938 /* Persistable+Log.swift */,
+			);
+			path = Persistable;
 			sourceTree = "<group>";
 		};
 		A478C0A3C8F2B94A60070B04 /* Pods */ = {
@@ -803,27 +908,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9832394C29607CC3007D627E /* NoteDrawingViewController.xib in Resources */,
+				9832393E29607B86007D627E /* SettingsListCell.xib in Resources */,
 				6FC1DA5526011A26006AF877 /* ReviewLessonViewController.storyboard in Resources */,
-				6F655D1924CDAF3B00402868 /* SettingsListCell.xib in Resources */,
 				6F655CC824CBAA1300402868 /* SettingsViewController.storyboard in Resources */,
 				6F6F753A260A6BC000390952 /* SwitchButtonCell.xib in Resources */,
+				9832393D29607B86007D627E /* SettingsListAppVersionCell.xib in Resources */,
 				6FFD1E7A24AE2F24008A52E5 /* LaunchScreen.storyboard in Resources */,
 				6F92429326DE6D63002022B3 /* Localizable.strings in Resources */,
 				6F6C691024C3A7F4002788C0 /* NoteAddTextViewController.xib in Resources */,
 				6F6C697724C8CA3E002788C0 /* NoteDetailMemoCell.xib in Resources */,
 				6FFD1E7724AE2F24008A52E5 /* Assets.xcassets in Resources */,
 				6F6C691524C3C0D8002788C0 /* NoteDetailTextCell.xib in Resources */,
-				6F655D1D24CDB05300402868 /* SettingsListAppVersionCell.xib in Resources */,
 				6F655D2524CDC7FC00402868 /* DrawingColorCell.xib in Resources */,
 				6F939BCC25F5194000204636 /* GoogleService-Info.plist in Resources */,
 				6F6C696F24C8C6DE002788C0 /* NoteDetailImageCell.xib in Resources */,
 				6F6C691924C4DBFE002788C0 /* NoteAddImageViewController.xib in Resources */,
-				6F655CCC24CBAA2500402868 /* SettingLicenseViewController.xib in Resources */,
 				98A561C92940A45B00AF6596 /* APIKeyInfo.plist in Resources */,
 				6F6C697B24C8E990002788C0 /* NoteDetailBookmarkCell.xib in Resources */,
+				9832394129607B97007D627E /* SettingLicenseViewController.xib in Resources */,
 				6F73FE17260CD5A400FADE98 /* SettingTimerCell.xib in Resources */,
 				6F5B32A524B4DA84005B0926 /* GroupListViewController.storyboard in Resources */,
-				6F655D2124CDBF1900402868 /* NoteDrawingViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -973,6 +1078,7 @@
 				6F9E74F0273EE8E000533FD6 /* PersistableProtocol.swift in Sources */,
 				6F9E74EE273ECE8F00533FD6 /* ReviewListEntryView.swift in Sources */,
 				6F724C31273F91CC00E72353 /* WidgetIntents.intentdefinition in Sources */,
+				9832393129607815007D627E /* Collection+Extensions.swift in Sources */,
 				6F9E74F1273EE8E000533FD6 /* RealmManager.swift in Sources */,
 				6F9E74F5273EE98C00533FD6 /* ReviewLessonViewModel.swift in Sources */,
 				6F9E74EC273ECDE800533FD6 /* ReviewListEntry.swift in Sources */,
@@ -993,10 +1099,13 @@
 				6F5B32A324B4DA69005B0926 /* GroupListViewController.swift in Sources */,
 				6F34CA922714AC2600339B65 /* UnderstandLevelCheckButton.swift in Sources */,
 				6F7FADB6260257E7001FC914 /* StudyFinishViewController.swift in Sources */,
+				9832394529607C18007D627E /* SettingsListCell.swift in Sources */,
 				6F5B32AA24B4E955005B0926 /* NoteListCell.swift in Sources */,
 				6F4A7DD224D21FDE008570A6 /* RealmGroup.swift in Sources */,
 				6F4A7DD624D22277008570A6 /* RealmManager.swift in Sources */,
 				98AE6152295C4297008E8938 /* GroupRepository.swift in Sources */,
+				9832394D29607CC3007D627E /* NoteDrawingViewController.swift in Sources */,
+				9832393929607AFB007D627E /* SettingsViewController.swift in Sources */,
 				6F7FADBD26025DA8001FC914 /* BlankPaperPageViewController.swift in Sources */,
 				6F5B32AF24B4EAB6005B0926 /* NoteDetailViewController.swift in Sources */,
 				6F2D238324AF9C9E00F21A60 /* RootTabbarItem.swift in Sources */,
@@ -1013,7 +1122,6 @@
 				6F34CA8F2714967600339B65 /* BlinkStudyNoteTitleView.swift in Sources */,
 				6F6C691824C4DBFD002788C0 /* NoteAddImageViewController.swift in Sources */,
 				6F9E74EB273ECDE800533FD6 /* ReviewListEntry.swift in Sources */,
-				6F655D1C24CDB05300402868 /* SettingsListAppVersionCell.swift in Sources */,
 				6F612FAC2603E048003A750E /* FindGroupViewController.swift in Sources */,
 				6FFD1E6E24AE2F20008A52E5 /* AppDelegate.swift in Sources */,
 				6F724C30273F91CC00E72353 /* WidgetIntents.intentdefinition in Sources */,
@@ -1030,7 +1138,6 @@
 				6F5B32AC24B4E9BB005B0926 /* NoteListViewController.swift in Sources */,
 				6F5B32A824B4E01D005B0926 /* GroupListCell.swift in Sources */,
 				6F9DB03F26F3703C00D55A88 /* GroupAddViewController.swift in Sources */,
-				6F655D1824CDAF3B00402868 /* SettingsListCell.swift in Sources */,
 				6F9DB04326F3A26400D55A88 /* CustomStyledButton.swift in Sources */,
 				6F34CA9F2715451F00339B65 /* StudyHelpPopUpViewController.swift in Sources */,
 				6F6C690524C23779002788C0 /* Extensions.swift in Sources */,
@@ -1041,11 +1148,10 @@
 				6FFD1E8824AE4BB5008A52E5 /* Group.swift in Sources */,
 				6F655D3D24D1B9B300402868 /* NoteListViewModel.swift in Sources */,
 				98AE6162295D9769008E8938 /* Collection+Extensions.swift in Sources */,
+				9832393F29607B86007D627E /* SettingsListAppVersionCell.swift in Sources */,
 				6F655D3B24D14A0D00402868 /* GroupListViewModel.swift in Sources */,
-				6F655D2024CDBF1900402868 /* NoteDrawingViewController.swift in Sources */,
 				6F3C915F26D595E000035683 /* BlinkPageViewController.swift in Sources */,
 				98AE6159295C53B4008E8938 /* Persistable+Note.swift in Sources */,
-				6F655CC724CBAA1300402868 /* SettingsViewController.swift in Sources */,
 				6F612FA72603D19F003A750E /* AppProperties.swift in Sources */,
 				98AE6157295C5378008E8938 /* Persistable+Group.swift in Sources */,
 				6FFD1E7024AE2F20008A52E5 /* SceneDelegate.swift in Sources */,
@@ -1071,7 +1177,7 @@
 				98AE6155295C530D008E8938 /* Log.swift in Sources */,
 				981F04B8295C28130023D345 /* BitnoteTests.swift in Sources */,
 				98AE6160295C5503008E8938 /* SettingConfig.swift in Sources */,
-				98AE6163295D9771008E8938 /* Collection+Extensions.swift in Sources */,
+				9832394E29607E11007D627E /* FindGroupViewModel.swift in Sources */,
 				981F04C3295C41EF0023D345 /* Repository.swift in Sources */,
 				98AE6153295C4B52008E8938 /* Group.swift in Sources */,
 			);
@@ -1181,13 +1287,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = DeveloperNote/DeveloperNote.entitlements;
+				CODE_SIGN_ENTITLEMENTS = DeveloperNote/Support/DeveloperNote.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 56KBBDN6MA;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = DeveloperNote/Info.plist;
+				INFOPLIST_FILE = DeveloperNote/Support/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				JIN_Bundle_Name = "$(PRODUCT_NAME)_Beta";
 				JIN_Bundle_identifier = Jin.com.DeveloperNote.Beta;
@@ -1405,13 +1511,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = DeveloperNote/DeveloperNote.entitlements;
+				CODE_SIGN_ENTITLEMENTS = DeveloperNote/Support/DeveloperNote.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 56KBBDN6MA;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = DeveloperNote/Info.plist;
+				INFOPLIST_FILE = DeveloperNote/Support/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				JIN_Bundle_Name = "$(PRODUCT_NAME)_Debug";
 				JIN_Bundle_identifier = Jin.com.DeveloperNote;
@@ -1433,12 +1539,12 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = DeveloperNote/DeveloperNote.entitlements;
+				CODE_SIGN_ENTITLEMENTS = DeveloperNote/Support/DeveloperNote.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 56KBBDN6MA;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = DeveloperNote/Info.plist;
+				INFOPLIST_FILE = DeveloperNote/Support/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				JIN_Bundle_Name = "$(PRODUCT_NAME)";
 				JIN_Bundle_identifier = Jin.com.DeveloperNote;

@@ -97,5 +97,7 @@ iOSInjectionProject/
 # End of https://www.toptal.com/developers/gitignore/api/swift,cocoapods
 
 # Google
-GoogleService-Info.plist
-APIKeyInfo.plist
+*/GoogleService-Info.plist
+*/APIKeyInfo.plist
+Bitnote/DeveloperNote/Support/APIKeyInfo.plist
+Bitnote/DeveloperNote/Support/GoogleService-Info.plist
