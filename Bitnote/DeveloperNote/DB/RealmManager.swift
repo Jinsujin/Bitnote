@@ -103,7 +103,7 @@ public final class RealmManager {
       
     public func getUrl() -> URL? {
         let url = Realm.Configuration.defaultConfiguration.fileURL
-        print("Realm Database fileUrl:", url?.absoluteString)
+        print("📂 Realm Database fileUrl:", url?.absoluteString ?? "Not Found")
         return url
     }
     
@@ -123,6 +123,24 @@ public final class RealmManager {
             try block(transaction)
         }
     }
-}
+    
+    static func fetchObjects<T: Persistable>(_ persistable: T.Type) throws -> [T] {
+        guard let realm = RealmManager.realm() else {
+            throw RealmErrorMessage.FailInitialize
+        }
+        
+        let results = realm.objects(persistable.ManagedObject)
+        return results.compactMap({ T(managedObject: $0) })
+    }
+    
+    static func editGroup<T: Persistable>(_ persistable: T.Type, targetID: UID, title: String, completion: @escaping (T) -> Void) throws {
+        guard let realm = RealmManager.realm() else {
+            throw RealmErrorMessage.FailInitialize
+        }
 
- 
+        try realm.write {
+            let updateResult = realm.create(persistable.ManagedObject, value: ["uid": targetID, "title": title], update: .modified)
+            completion(T(managedObject: updateResult))
+        }
+    }
+}

@@ -10,12 +10,12 @@ class GroupRepository: Repository {
     }
     
     func fetchGroups(completion: @escaping ([Group]) -> Void) {
-        if let realm = RealmManager.realm() {
-            let fetchObjects = realm.objects(RealmGroup.self)
-            self.groupDataList = fetchObjects.compactMap({
-                Group(managedObject: $0)
-            })
-            completion(groupDataList)
+        do {
+            let fetchResults = try RealmManager.fetchObjects(Group.self)
+            self.groupDataList = fetchResults
+            completion(fetchResults)
+        } catch {
+            print(error.localizedDescription)
         }
     }
     
@@ -52,23 +52,21 @@ class GroupRepository: Repository {
         }
     }
 
-    func editGroupTitle(target group: Group, title: String, completion: @escaping ([Group]?) -> Void) {
-        let updateGroup = Group(original: group, uptatedTitle: title)
         
-        guard let realm = RealmManager.realm() else {
-            completion(nil)
-            return
-        }
-        
-        try! realm.write {
-            guard let index = groupDataList.firstIndex(where: { $0.id == group.id }) else {
-                completion(nil)
-                return
-            }
-            realm.create(RealmGroup.self, value: ["uid": updateGroup.id, "title": title], update: .modified)
-            groupDataList.remove(at: index)
-            groupDataList.insert(updateGroup, at: index)
-            completion(groupDataList)
+    func editGroup(target id: UID, editTitle: String, completion: @escaping ([Group]?) -> Void) {
+        do {
+            try RealmManager.editGroup(Group.self, targetID: id, title: editTitle, completion: { [weak self] updatedGroup in
+
+                guard let index = self?.groupDataList.firstIndex(where: { $0.id == updatedGroup.id }) else {
+                    completion(nil)
+                    return
+                }
+                self?.groupDataList.remove(at: index)
+                self?.groupDataList.insert(updatedGroup, at: index)
+                completion(self?.groupDataList)
+            })
+        } catch {
+            print(error.localizedDescription)
         }
     }
 }

@@ -11,13 +11,13 @@ import RealmSwift
 
 public protocol Persistable {
     
-    // associatedtype: 타입을 동적으로 변하게 하기위해 사용
-    // ex) name: int    -> name: T
+    /// associatedtype: 타입을 동적으로 변하게 하기위해 사용
+    /// ex) name: int    -> name: T
     associatedtype ManagedObject: RealmSwift.Object
     
-    // RealmObject -> Struct 변환
+    /// RealmObject -> Struct 변환
     init(managedObject: ManagedObject)
     
-    // Struct -> RealmObject
+    /// Struct -> RealmObject
     func managedObject() -> ManagedObject
 }

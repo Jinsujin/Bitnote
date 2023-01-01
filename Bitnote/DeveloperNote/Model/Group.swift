@@ -24,12 +24,6 @@ struct Group {
         self.notelist = notelist
     }
     
-    /// 그룹 이름 수정할때 사용
-     init(original: Group, uptatedTitle: String){
-        self = original
-        self.title = uptatedTitle
-    }
-    
     /** 노트목록(notelist) 에서 공부할 노트만 필터해서, notelist 를 업데이트 한다
      
      - 노트 내용이 있는것
