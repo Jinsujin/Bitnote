@@ -11,7 +11,7 @@ import RxSwift
 import RxRelay
 
 
-class GroupListViewModel {
+final class GroupListViewModel {
     
     private let repository: Repository
     var groupListOb = BehaviorRelay<[Group]>(value: [])

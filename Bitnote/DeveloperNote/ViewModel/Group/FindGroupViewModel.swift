@@ -1,23 +1,20 @@
 import Foundation
 import RxSwift
 
-class FindGroupViewModel {
+final class FindGroupViewModel {
     public var groupDataList: [Group] = []
     
-    /**
-     초기화
-
-     */
     init(){
         fetchGroupFromDB()
     }
     
     func fetchGroupFromDB(){
-        if let realm = RealmManager.realm() {
-            let fetchObjects = realm.objects(RealmGroup.self)
-            self.groupDataList = fetchObjects.compactMap({ Group(managedObject: $0)})
+        
+        do {
+            let fetchResults = try RealmManager.fetchObjects(Group.self)
+            self.groupDataList = fetchResults
             
-            // todo: 학습횟수 최대 5로 설정했을때, 5이하인 노트만 가지고 온다
+            // TODO:- 학습횟수 최대 5로 설정했을때, 5이하인 노트만 가지고 온다
 //            let groups = fetchObjects.compactMap({ Group(managedObject: $0) })
 //            for g in groups {
 //                var resultGroup = g
@@ -25,9 +22,10 @@ class FindGroupViewModel {
 //                resultGroup.notelist = filter5underReviewcount
 //                groupDataList.append(resultGroup)
 //            }
+        } catch {
+            print(error.localizedDescription)
         }
     }
-    
 }
 
 
