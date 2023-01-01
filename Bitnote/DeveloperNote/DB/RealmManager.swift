@@ -1,13 +1,25 @@
 import Foundation
 import RealmSwift
 
-/**
- Realm 초기화
- 
- */
+
+public final class WriteTransaction {
+    private let realm: Realm
+    
+    init(realm: Realm) {
+        self.realm = realm
+    }
+    
+    public func add<T: Persistable>(_ value: T) {
+        realm.add(value.managedObject())
+    }
+}
+
+enum RealmErrorMessage: String, Error {
+    case FailInitialize
+}
 
 
-public class RealmManager {
+public final class RealmManager {
     
     // realm 인스턴스 생성
     public static func realm() -> Realm? {
@@ -20,7 +32,7 @@ public class RealmManager {
       }
     
     
-    public static func connect(_ completion: @escaping (Bool)->()) {
+    public static func connect(_ completion: @escaping (Bool) -> Void) {
             let success: Bool
             if configRealm() {
                 success = true
@@ -101,6 +113,16 @@ public class RealmManager {
         return (realm.objects(T.ManagedObject.self).max(ofProperty: "uid") as Int? ?? 0) + 1
     }
   
+    static func write(_ block: (WriteTransaction) throws -> Void) throws {
+        guard let realm = RealmManager.realm() else {
+            throw RealmErrorMessage.FailInitialize
+        }
+        
+        let transaction = WriteTransaction(realm: realm)
+        try realm.write {
+            try block(transaction)
+        }
+    }
 }
 
  
