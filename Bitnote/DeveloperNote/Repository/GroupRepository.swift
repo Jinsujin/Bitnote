@@ -21,15 +21,15 @@ class GroupRepository: Repository {
     
     func addGroup(title: String, completion: @escaping ([Group]?) -> Void) {
         let newGroup = Group(title: title)
-        
-        guard let realm = RealmManager.realm() else {
-            completion(nil)
-            return
-        }
-        try! realm.write {
-            realm.add(newGroup.managedObject())
+
+        do {
+            try RealmManager.write { transaction in
+                transaction.add(newGroup)
+            }
             groupDataList.append(newGroup)
             completion(groupDataList)
+        } catch {
+            print(error.localizedDescription)
         }
     }
     
