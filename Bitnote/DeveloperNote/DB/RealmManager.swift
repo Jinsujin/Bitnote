@@ -16,6 +16,7 @@ public final class WriteTransaction {
 
 enum RealmErrorMessage: String, Error {
     case FailInitialize
+    case NotFoundObject
 }
 
 
@@ -124,6 +125,17 @@ public final class RealmManager {
         }
     }
     
+    static func fetchObject<T: Persistable>(_ persistable: T.Type, id: UID) throws -> T? {
+        guard let realm = RealmManager.realm() else {
+            throw RealmErrorMessage.FailInitialize
+        }
+        
+        guard let fetchObject = realm.object(ofType: persistable.ManagedObject, forPrimaryKey: id) else {
+            throw RealmErrorMessage.NotFoundObject
+        }
+        return T(managedObject: fetchObject)
+    }
+    
     static func fetchObjects<T: Persistable>(_ persistable: T.Type) throws -> [T] {
         guard let realm = RealmManager.realm() else {
             throw RealmErrorMessage.FailInitialize
@@ -141,6 +153,23 @@ public final class RealmManager {
         try realm.write {
             let updateResult = realm.create(persistable.ManagedObject, value: ["uid": targetID, "title": title], update: .modified)
             completion(T(managedObject: updateResult))
+        }
+    }
+    
+    static func deleteGroup(target id: UID, completion: () -> Void) throws {
+        guard let realm = RealmManager.realm() else {
+            throw RealmErrorMessage.FailInitialize
+        }
+        
+        guard let fetchObject = realm.object(ofType: RealmGroup.self, forPrimaryKey: id) else {
+            throw RealmErrorMessage.NotFoundObject
+        }
+        
+        try realm.write {
+            let childObjects = fetchObject.noteList
+            realm.delete(childObjects)
+            realm.delete(fetchObject)
+            completion()
         }
     }
 }

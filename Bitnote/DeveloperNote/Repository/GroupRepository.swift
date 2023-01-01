@@ -34,24 +34,17 @@ class GroupRepository: Repository {
     }
     
     func deleteGroup(row: Int, completion: @escaping ([Group]?) -> Void) {
-        let deleteUid = groupDataList[row].id
+        let deleteUID = groupDataList[row].id
         
-        guard let realm = RealmManager.realm(),
-        let fetchGroup = realm.object(ofType: RealmGroup.self, forPrimaryKey: deleteUid) else {
-            completion(nil)
-            return
-        }
-        
-        let childObjects = fetchGroup.noteList
-        try! realm.write {
-            realm.delete(childObjects)
-            realm.delete(fetchGroup)
-            
-            groupDataList.remove(at: row)
-            completion(groupDataList)
+        do {
+            try RealmManager.deleteGroup(target: deleteUID, completion: {
+                groupDataList.remove(at: row)
+                completion(groupDataList)
+            })
+        } catch {
+            print(error.localizedDescription)
         }
     }
-
         
     func editGroup(target id: UID, editTitle: String, completion: @escaping ([Group]?) -> Void) {
         do {
