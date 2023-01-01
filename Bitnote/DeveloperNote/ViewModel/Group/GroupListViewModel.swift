@@ -53,7 +53,7 @@ class GroupListViewModel {
     
     
     func editGroupTitle(_ selectedGroup: Group, title: String) {
-        repository.editGroupTitle(target: selectedGroup, title: title) { [weak self] updatedGroups in
+        repository.editGroup(target: selectedGroup.id, editTitle: title) { [weak self] updatedGroups in
             if let groups = updatedGroups {
                 self?.groupListOb.accept(groups)
             }

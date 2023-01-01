@@ -129,14 +129,19 @@ class MockRepository: Repository {
         completion(groupList)
     }
     
-    func editGroupTitle(target group: Group, title: String, completion: @escaping ([Group]?) -> Void) {
+    func editGroup(target id: UID, editTitle: String, completion: @escaping ([Group]?) -> Void) {
         editGroupTitleMethodCallCount += 1
-        guard let index = groupList.firstIndex(where: { $0.id == group.id }) else {
+        guard let index = groupList.firstIndex(where: { $0.id == id }) else {
             completion(nil)
             return
         }
+        guard let originalIndex = groupList.firstIndex(where: { $0.id == id }) else {
+            completion(nil)
+            return
+        }
+        let originalGroup = groupList[originalIndex]
         groupList.remove(at: index)
-        let updateGroup = Group(original: group, uptatedTitle: title)
+        let updateGroup = Group(id: originalGroup.id, title: editTitle, notelist: originalGroup.notelist)
         groupList.insert(updateGroup, at: index)
     }
 }

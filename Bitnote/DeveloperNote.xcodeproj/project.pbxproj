@@ -121,8 +121,8 @@
 		9832394529607C18007D627E /* SettingsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9832394429607C18007D627E /* SettingsListCell.swift */; };
 		9832394C29607CC3007D627E /* NoteDrawingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9832394A29607CC3007D627E /* NoteDrawingViewController.xib */; };
 		9832394D29607CC3007D627E /* NoteDrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9832394B29607CC3007D627E /* NoteDrawingViewController.swift */; };
-		9832394E29607E11007D627E /* FindGroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC1DA5B2601266A006AF877 /* FindGroupViewModel.swift */; };
 		98323954296082F1007D627E /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98323953296082F1007D627E /* ColorAssets.xcassets */; };
+		983239552961E19F007D627E /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AE6161295D9768008E8938 /* Collection+Extensions.swift */; };
 		98A561C92940A45B00AF6596 /* APIKeyInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98A561C82940A45B00AF6596 /* APIKeyInfo.plist */; };
 		98AE6152295C4297008E8938 /* GroupRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AE6151295C4297008E8938 /* GroupRepository.swift */; };
 		98AE6153295C4B52008E8938 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFD1E8724AE4BB5008A52E5 /* Group.swift */; };
@@ -1197,9 +1197,9 @@
 				98AE6155295C530D008E8938 /* Log.swift in Sources */,
 				981F04B8295C28130023D345 /* BitnoteTests.swift in Sources */,
 				98AE6160295C5503008E8938 /* SettingConfig.swift in Sources */,
-				9832394E29607E11007D627E /* FindGroupViewModel.swift in Sources */,
 				981F04C3295C41EF0023D345 /* Repository.swift in Sources */,
 				98AE6153295C4B52008E8938 /* Group.swift in Sources */,
+				983239552961E19F007D627E /* Collection+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
