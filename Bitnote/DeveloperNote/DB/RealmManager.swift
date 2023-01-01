@@ -114,6 +114,12 @@ public final class RealmManager {
         return (realm.objects(T.ManagedObject.self).max(ofProperty: "uid") as Int? ?? 0) + 1
     }
   
+    /**
+     * 사용:
+     try! manager.write { transaction in
+         transaction.add(Object)
+     }
+     */
     static func write(_ block: (WriteTransaction) throws -> Void) throws {
         guard let realm = RealmManager.realm() else {
             throw RealmErrorMessage.FailInitialize
