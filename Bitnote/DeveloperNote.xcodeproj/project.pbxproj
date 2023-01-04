@@ -136,6 +136,7 @@
 		98AE615F295C5472008E8938 /* Persistable+Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AE615B295C53EA008E8938 /* Persistable+Log.swift */; };
 		98AE6160295C5503008E8938 /* SettingConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F73FE44260CEE7D00FADE98 /* SettingConfig.swift */; };
 		98AE6162295D9769008E8938 /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AE6161295D9768008E8938 /* Collection+Extensions.swift */; };
+		98FA4AF62965D6BE000FE70C /* MockGroupRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FA4AF52965D6BE000FE70C /* MockGroupRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -284,6 +285,7 @@
 		98AE6158295C53B4008E8938 /* Persistable+Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Persistable+Note.swift"; sourceTree = "<group>"; };
 		98AE615B295C53EA008E8938 /* Persistable+Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Persistable+Log.swift"; sourceTree = "<group>"; };
 		98AE6161295D9768008E8938 /* Collection+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
+		98FA4AF52965D6BE000FE70C /* MockGroupRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGroupRepository.swift; sourceTree = "<group>"; };
 		A276393FFD15E2D49AAB78FA /* Pods-DeveloperNote-BitnoteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeveloperNote-BitnoteTests.debug.xcconfig"; path = "Target Support Files/Pods-DeveloperNote-BitnoteTests/Pods-DeveloperNote-BitnoteTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C10E2E925BB96562D695FAE3 /* Pods-DeveloperNote-BitnoteTests.beta.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeveloperNote-BitnoteTests.beta.xcconfig"; path = "Target Support Files/Pods-DeveloperNote-BitnoteTests/Pods-DeveloperNote-BitnoteTests.beta.xcconfig"; sourceTree = "<group>"; };
 		C8E7C1A49B8D3616317C8B54 /* Pods-DeveloperNote-BitnoteTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeveloperNote-BitnoteTests.release.xcconfig"; path = "Target Support Files/Pods-DeveloperNote-BitnoteTests/Pods-DeveloperNote-BitnoteTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -619,6 +621,7 @@
 			isa = PBXGroup;
 			children = (
 				981F04B7295C28130023D345 /* BitnoteTests.swift */,
+				98FA4AF52965D6BE000FE70C /* MockGroupRepository.swift */,
 			);
 			path = BitnoteTests;
 			sourceTree = "<group>";
@@ -1196,6 +1199,7 @@
 				981F04BF295C414A0023D345 /* GroupListViewModel.swift in Sources */,
 				98AE6155295C530D008E8938 /* Log.swift in Sources */,
 				981F04B8295C28130023D345 /* BitnoteTests.swift in Sources */,
+				98FA4AF62965D6BE000FE70C /* MockGroupRepository.swift in Sources */,
 				98AE6160295C5503008E8938 /* SettingConfig.swift in Sources */,
 				981F04C3295C41EF0023D345 /* Repository.swift in Sources */,
 				98AE6153295C4B52008E8938 /* Group.swift in Sources */,
