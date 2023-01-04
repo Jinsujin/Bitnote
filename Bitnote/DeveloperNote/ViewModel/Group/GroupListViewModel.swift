@@ -1,11 +1,3 @@
-//
-//  GroupListViewModel.swift
-//  DeveloperNote
-//
-//  Created by jsj on 2020/07/29.
-//  Copyright © 2020 Tomatoma. All rights reserved.
-//
-
 import Foundation
 import RxSwift
 import RxRelay
@@ -39,7 +31,7 @@ final class GroupListViewModel {
     
     
     func deleteGroup(at row: Int) {
-        repository.deleteGroup(row: row) { [weak self] updatedGroups in
+        repository.deleteGroup(source: groupListOb.value, row: row) { [weak self] updatedGroups in
             if let groups = updatedGroups {
                 self?.groupListOb.accept(groups)
             }
@@ -48,12 +40,12 @@ final class GroupListViewModel {
     
     
     func getGroup(by indexPath: IndexPath) -> Group? {
-        return repository.getGroup(at: indexPath.row)
+        return repository.getGroup(source: groupListOb.value, at: indexPath.row)
     }
     
     
     func editGroupTitle(_ selectedGroup: Group, title: String) {
-        repository.editGroup(target: selectedGroup.id, editTitle: title) { [weak self] updatedGroups in
+        repository.editGroup(source: groupListOb.value, target: selectedGroup.id, editTitle: title) { [weak self] updatedGroups in
             if let groups = updatedGroups {
                 self?.groupListOb.accept(groups)
             }

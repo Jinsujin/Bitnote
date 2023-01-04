@@ -2,11 +2,17 @@ import Foundation
 
 
 class GroupRepository: Repository {
-
-    private var groupDataList: [Group] = []
     
-    func getGroup(at index: Int) -> Group? {
-        return groupDataList[safe: index]
+    func getGroup(source groups: [Group], at index: Int) -> Group? {
+        if let selectGroup = groups[safe: index] {
+            do {
+                let fetchReslt = try RealmManager.fetchObject(Group.self, id: selectGroup.id)
+                return fetchReslt
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+        return nil
     }
     
     func fetchGroups(completion: @escaping ([Group]) -> Void) {
@@ -33,30 +39,32 @@ class GroupRepository: Repository {
         }
     }
     
-    func deleteGroup(row: Int, completion: @escaping ([Group]?) -> Void) {
-        let deleteUID = groupDataList[row].id
+    func deleteGroup(source groups: [Group], row: Int, completion: @escaping ([Group]?) -> Void) {
+        var sourceGroups = groups
+        let deleteUID = sourceGroups[row].id
         
         do {
             try RealmManager.deleteGroup(target: deleteUID, completion: {
-                groupDataList.remove(at: row)
-                completion(groupDataList)
+                sourceGroups.remove(at: row)
+                completion(sourceGroups)
             })
         } catch {
             print(error.localizedDescription)
         }
     }
         
-    func editGroup(target id: UID, editTitle: String, completion: @escaping ([Group]?) -> Void) {
+    func editGroup(source groups: [Group], target id: UID, editTitle: String, completion: @escaping ([Group]?) -> Void) {
+        var sourceGroups = groups
         do {
-            try RealmManager.editGroup(Group.self, targetID: id, title: editTitle, completion: { [weak self] updatedGroup in
+            try RealmManager.editGroup(Group.self, targetID: id, title: editTitle, completion: { updatedGroup in
 
-                guard let index = self?.groupDataList.firstIndex(where: { $0.id == updatedGroup.id }) else {
+                guard let index = sourceGroups.firstIndex(where: { $0.id == updatedGroup.id }) else {
                     completion(nil)
                     return
                 }
-                self?.groupDataList.remove(at: index)
-                self?.groupDataList.insert(updatedGroup, at: index)
-                completion(self?.groupDataList)
+                sourceGroups.remove(at: index)
+                sourceGroups.insert(updatedGroup, at: index)
+                completion(sourceGroups)
             })
         } catch {
             print(error.localizedDescription)
