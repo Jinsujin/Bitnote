@@ -12,22 +12,22 @@ class GroupRepository: Repository {
     func fetchGroups(completion: @escaping ([Group]) -> Void) {
         do {
             let fetchResults = try RealmManager.fetchObjects(Group.self)
-            self.groupDataList = fetchResults
             completion(fetchResults)
         } catch {
             print(error.localizedDescription)
         }
     }
     
-    func addGroup(title: String, completion: @escaping ([Group]?) -> Void) {
+    func addGroup(source groups: [Group], title: String, completion: @escaping ([Group]?) -> Void) {
         let newGroup = Group(title: title)
+        var sourceGroups = groups
 
         do {
             try RealmManager.write { transaction in
                 transaction.add(newGroup)
             }
-            groupDataList.append(newGroup)
-            completion(groupDataList)
+            sourceGroups.append(newGroup)
+            completion(sourceGroups)
         } catch {
             print(error.localizedDescription)
         }
