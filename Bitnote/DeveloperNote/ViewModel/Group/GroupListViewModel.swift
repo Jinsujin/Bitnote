@@ -30,7 +30,7 @@ final class GroupListViewModel {
     
     
     func addNewGroup(_ title: String) {
-        repository.addGroup(title: title) { [weak self] updatedGroups in
+        repository.addGroup(source: groupListOb.value, title: title) { [weak self] updatedGroups in
             if let groups = updatedGroups {
                 self?.groupListOb.accept(groups)
             }

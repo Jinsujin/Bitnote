@@ -116,11 +116,13 @@ class MockRepository: Repository {
         completion(groupList)
     }
     
-    func addGroup(title: String, completion: @escaping ([Group]?) -> Void) {
+    func addGroup(source groups: [Group], title: String, completion: @escaping ([Group]?) -> Void) {
         let newGroup = Group(title: title)
+        var sourceGroups = groups
+        sourceGroups.append(newGroup)
         groupList.append(newGroup)
         addGroupMethodCallCount += 1
-        completion(groupList)
+        completion(sourceGroups)
     }
     
     func deleteGroup(row: Int, completion: @escaping ([Group]?) -> Void) {
