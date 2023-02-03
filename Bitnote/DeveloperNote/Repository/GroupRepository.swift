@@ -3,28 +3,34 @@ import Foundation
 
 class GroupRepository: Repository {
     
-    func getGroup(source groups: [Group], at index: Int) -> Group? {
-        if let selectGroup = groups[safe: index] {
-            do {
-                let fetchReslt = try RealmManager.fetchObject(Group.self, id: selectGroup.id)
-                return fetchReslt
-            } catch {
-                print(error.localizedDescription)
-            }
-        }
-        return nil
+    enum PersistableStorageError: Error {
+        case outOfRange
+        case invalidIndex
     }
     
-    func fetchGroups(completion: @escaping ([Group]) -> Void) {
+    func pickGroup(in groups: [Group], at index: Int) -> Result<Group, Error> {
+        guard let selectGroup = groups[safe: index] else {
+            return .failure(PersistableStorageError.outOfRange)
+        }
+        
+        do {
+            let fetchReslt = try RealmManager.fetchObject(Group.self, id: selectGroup.id)
+            return .success(fetchReslt)
+        } catch {
+            return .failure(error)
+        }
+    }
+
+    func fetchGroups() -> Result<[Group], Error> {
         do {
             let fetchResults = try RealmManager.fetchObjects(Group.self)
-            completion(fetchResults)
+            return .success(fetchResults)
         } catch {
-            print(error.localizedDescription)
+            return .failure(error)
         }
     }
     
-    func addGroup(source groups: [Group], title: String, completion: @escaping ([Group]?) -> Void) {
+    func addGroup(source groups: [Group], title: String, completion: @escaping (Result<[Group], Error>) -> Void) {
         let newGroup = Group(title: title)
         var sourceGroups = groups
 
@@ -33,41 +39,37 @@ class GroupRepository: Repository {
                 transaction.add(newGroup)
             }
             sourceGroups.append(newGroup)
-            completion(sourceGroups)
+            completion(.success(sourceGroups))
         } catch {
-            print(error.localizedDescription)
+            completion(.failure(error))
         }
     }
     
-    func deleteGroup(source groups: [Group], row: Int, completion: @escaping ([Group]?) -> Void) {
+    func deleteGroup(source groups: [Group], row: Int) async -> Result<[Group] ,Error> {
         var sourceGroups = groups
         let deleteUID = sourceGroups[row].id
-        
         do {
-            try RealmManager.deleteGroup(target: deleteUID, completion: {
-                sourceGroups.remove(at: row)
-                completion(sourceGroups)
-            })
+            let _ = try await RealmManager.deleteGroup(target: deleteUID)
+            sourceGroups.remove(at: row)
+            return .success(sourceGroups)
         } catch {
-            print(error.localizedDescription)
+            return .failure(error)
         }
     }
-        
-    func editGroup(source groups: [Group], target id: UID, editTitle: String, completion: @escaping ([Group]?) -> Void) {
+    
+    func editGroup(source groups: [Group], target id: UID, editTitle: String) async -> Result<[Group], Error> {
         var sourceGroups = groups
+        
         do {
-            try RealmManager.editGroup(Group.self, targetID: id, title: editTitle, completion: { updatedGroup in
-
-                guard let index = sourceGroups.firstIndex(where: { $0.id == updatedGroup.id }) else {
-                    completion(nil)
-                    return
-                }
-                sourceGroups.remove(at: index)
-                sourceGroups.insert(updatedGroup, at: index)
-                completion(sourceGroups)
-            })
+            let updatedGroup = try await RealmManager.editGroup(Group.self, targetID: id, title: editTitle)
+            guard let index = sourceGroups.firstIndex(where: { $0.id == updatedGroup.id }) else {
+                return .failure(PersistableStorageError.invalidIndex)
+            }
+            sourceGroups.remove(at: index)
+            sourceGroups.insert(updatedGroup, at: index)
+            return .success(sourceGroups)
         } catch {
-            print(error.localizedDescription)
+            return .failure(error)
         }
     }
 }

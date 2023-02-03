@@ -15,40 +15,49 @@ final class GroupListViewModel {
     
     
     func getGroups() {
-        repository.fetchGroups { [weak self] groups in
-            self?.groupListOb.accept(groups)
+        if case let .success(data) = repository.fetchGroups() {
+            self.groupListOb.accept(data)
         }
     }
     
     
     func addNewGroup(_ title: String) {
-        repository.addGroup(source: groupListOb.value, title: title) { [weak self] updatedGroups in
-            if let groups = updatedGroups {
+        repository.addGroup(source: groupListOb.value, title: title) { [weak self] result in
+            if case let .success(groups) = result {
                 self?.groupListOb.accept(groups)
             }
+            // TODO: - Error handle
         }
     }
     
     
     func deleteGroup(at row: Int) {
-        repository.deleteGroup(source: groupListOb.value, row: row) { [weak self] updatedGroups in
-            if let groups = updatedGroups {
-                self?.groupListOb.accept(groups)
+        Task {
+            let result = await repository.deleteGroup(source: groupListOb.value, row: row)
+            if case let .success(updatedGroups) = result {
+                self.groupListOb.accept(updatedGroups)
             }
+            // TODO: - Error handle
         }
     }
     
     
     func getGroup(by indexPath: IndexPath) -> Group? {
-        return repository.getGroup(source: groupListOb.value, at: indexPath.row)
+        let result = repository.pickGroup(in: groupListOb.value, at: indexPath.row)
+        if case let .success(data) = result {
+            return data
+        }
+        return nil
     }
     
     
     func editGroupTitle(_ selectedGroup: Group, title: String) {
-        repository.editGroup(source: groupListOb.value, target: selectedGroup.id, editTitle: title) { [weak self] updatedGroups in
-            if let groups = updatedGroups {
-                self?.groupListOb.accept(groups)
+        Task {
+            let result = await repository.editGroup(source: groupListOb.value, target: selectedGroup.id, editTitle: title)
+            if case let .success(updatedGroups) = result {
+                groupListOb.accept(updatedGroups)
             }
+            // TODO: - Error handle
         }
     }
 }

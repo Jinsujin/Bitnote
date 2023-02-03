@@ -131,7 +131,7 @@ public final class RealmManager {
         }
     }
     
-    static func fetchObject<T: Persistable>(_ persistable: T.Type, id: UID) throws -> T? {
+    static func fetchObject<T: Persistable>(_ persistable: T.Type, id: UID) throws -> T {
         guard let realm = RealmManager.realm() else {
             throw RealmErrorMessage.FailInitialize
         }
@@ -151,31 +151,43 @@ public final class RealmManager {
         return results.compactMap({ T(managedObject: $0) })
     }
     
-    static func editGroup<T: Persistable>(_ persistable: T.Type, targetID: UID, title: String, completion: @escaping (T) -> Void) throws {
-        guard let realm = RealmManager.realm() else {
-            throw RealmErrorMessage.FailInitialize
-        }
-
-        try realm.write {
-            let updateResult = realm.create(persistable.ManagedObject, value: ["uid": targetID, "title": title], update: .modified)
-            completion(T(managedObject: updateResult))
+    static func editGroup<T: Persistable>(_ persistable: T.Type, targetID: UID, title: String) async throws -> T {
+        typealias Continuation = CheckedContinuation<T, Error>
+        return try await withCheckedThrowingContinuation {
+            (continuation: Continuation) in
+                do {
+                    guard let realm = RealmManager.realm() else {
+                        throw RealmErrorMessage.FailInitialize
+                    }
+                    try realm.write {
+                        let updateResult = realm.create(persistable.ManagedObject, value: ["uid": targetID, "title": title], update: .modified)
+                        continuation.resume(returning: T(managedObject: updateResult))
+                    }
+                } catch {
+                    continuation.resume(throwing: error)
+                }
         }
     }
     
-    static func deleteGroup(target id: UID, completion: () -> Void) throws {
-        guard let realm = RealmManager.realm() else {
-            throw RealmErrorMessage.FailInitialize
-        }
-        
-        guard let fetchObject = realm.object(ofType: RealmGroup.self, forPrimaryKey: id) else {
-            throw RealmErrorMessage.NotFoundObject
-        }
-        
-        try realm.write {
-            let childObjects = fetchObject.noteList
-            realm.delete(childObjects)
-            realm.delete(fetchObject)
-            completion()
+    static func deleteGroup(target id: UID) async throws -> UID {
+        typealias GroupContinuation = CheckedContinuation<UID, Error>
+        return try await withCheckedThrowingContinuation { (continuation: GroupContinuation) in
+            do {
+                guard let realm = RealmManager.realm() else {
+                    throw RealmErrorMessage.FailInitialize
+                }
+                guard let fetchObject = realm.object(ofType: RealmGroup.self, forPrimaryKey: id) else {
+                    throw RealmErrorMessage.NotFoundObject
+                }
+                try realm.write {
+                    let childObjects = fetchObject.noteList
+                    realm.delete(childObjects)
+                    realm.delete(fetchObject)
+                }
+                continuation.resume(with: .success(id))
+            } catch {
+                continuation.resume(with: .failure(error))
+            }
         }
     }
 }
