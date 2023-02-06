@@ -108,7 +108,7 @@
 		6FFD1E7A24AE2F24008A52E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FFD1E7824AE2F24008A52E5 /* LaunchScreen.storyboard */; };
 		6FFD1E8824AE4BB5008A52E5 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFD1E8724AE4BB5008A52E5 /* Group.swift */; };
 		7C76EF49A705CE844D2A47FE /* Pods_DeveloperNote_BitnoteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69E9065F033458AD297EB099 /* Pods_DeveloperNote_BitnoteTests.framework */; };
-		981F04B8295C28130023D345 /* BitnoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981F04B7295C28130023D345 /* BitnoteTests.swift */; };
+		981F04B8295C28130023D345 /* GroupViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981F04B7295C28130023D345 /* GroupViewModelTests.swift */; };
 		981F04BF295C414A0023D345 /* GroupListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F655D3A24D14A0D00402868 /* GroupListViewModel.swift */; };
 		981F04C2295C41D10023D345 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981F04C1295C41D10023D345 /* Repository.swift */; };
 		981F04C3295C41EF0023D345 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981F04C1295C41D10023D345 /* Repository.swift */; };
@@ -268,7 +268,7 @@
 		6FFD1E8724AE4BB5008A52E5 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		91739A92FAAF9BE55293339F /* Pods_ReviewWidgetExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReviewWidgetExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		981F04B5295C28130023D345 /* BitnoteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BitnoteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		981F04B7295C28130023D345 /* BitnoteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitnoteTests.swift; sourceTree = "<group>"; };
+		981F04B7295C28130023D345 /* GroupViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewModelTests.swift; sourceTree = "<group>"; };
 		981F04C1295C41D10023D345 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		9832393829607AFB007D627E /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		9832393A29607B86007D627E /* SettingsListAppVersionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsListAppVersionCell.xib; sourceTree = "<group>"; };
@@ -620,8 +620,7 @@
 		981F04B6295C28130023D345 /* BitnoteTests */ = {
 			isa = PBXGroup;
 			children = (
-				981F04B7295C28130023D345 /* BitnoteTests.swift */,
-				98FA4AF52965D6BE000FE70C /* MockGroupRepository.swift */,
+				98991EB32990E5D700A2115A /* Group */,
 			);
 			path = BitnoteTests;
 			sourceTree = "<group>";
@@ -792,6 +791,15 @@
 				98323953296082F1007D627E /* ColorAssets.xcassets */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		98991EB32990E5D700A2115A /* Group */ = {
+			isa = PBXGroup;
+			children = (
+				981F04B7295C28130023D345 /* GroupViewModelTests.swift */,
+				98FA4AF52965D6BE000FE70C /* MockGroupRepository.swift */,
+			);
+			path = Group;
 			sourceTree = "<group>";
 		};
 		A478C0A3C8F2B94A60070B04 /* Pods */ = {
@@ -1198,7 +1206,7 @@
 				98AE6154295C5306008E8938 /* Note.swift in Sources */,
 				981F04BF295C414A0023D345 /* GroupListViewModel.swift in Sources */,
 				98AE6155295C530D008E8938 /* Log.swift in Sources */,
-				981F04B8295C28130023D345 /* BitnoteTests.swift in Sources */,
+				981F04B8295C28130023D345 /* GroupViewModelTests.swift in Sources */,
 				98FA4AF62965D6BE000FE70C /* MockGroupRepository.swift in Sources */,
 				98AE6160295C5503008E8938 /* SettingConfig.swift in Sources */,
 				981F04C3295C41EF0023D345 /* Repository.swift in Sources */,

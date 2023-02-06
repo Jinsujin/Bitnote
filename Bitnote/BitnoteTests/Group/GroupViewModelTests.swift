@@ -1,6 +1,6 @@
 import XCTest
 
-class BitnoteTests: XCTestCase {
+class GroupViewModelTests: XCTestCase {
     
     var sut: GroupListViewModel!
     var mockRepository: MockGroupRepository!
