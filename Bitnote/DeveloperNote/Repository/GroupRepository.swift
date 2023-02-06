@@ -30,18 +30,19 @@ class GroupRepository: Repository {
         }
     }
     
-    func addGroup(source groups: [Group], title: String, completion: @escaping (Result<[Group], Error>) -> Void) {
+    func addGroup(source groups: [Group], title: String) async -> Result<[Group], Error> {
         let newGroup = Group(title: title)
         var sourceGroups = groups
-
-        do {
-            try RealmManager.write { transaction in
-                transaction.add(newGroup)
+        return await withCheckedContinuation { continuation in
+            do {
+                try RealmManager.write { transaction in
+                    transaction.add(newGroup)
+                }
+                sourceGroups.append(newGroup)
+                continuation.resume(returning: .success(sourceGroups))
+            } catch {
+                continuation.resume(returning: .failure(error))
             }
-            sourceGroups.append(newGroup)
-            completion(.success(sourceGroups))
-        } catch {
-            completion(.failure(error))
         }
     }
     

@@ -113,23 +113,6 @@ public final class RealmManager {
         
         return (realm.objects(T.ManagedObject.self).max(ofProperty: "uid") as Int? ?? 0) + 1
     }
-  
-    /**
-     * 사용:
-     try! manager.write { transaction in
-         transaction.add(Object)
-     }
-     */
-    static func write(_ block: (WriteTransaction) throws -> Void) throws {
-        guard let realm = RealmManager.realm() else {
-            throw RealmErrorMessage.FailInitialize
-        }
-        
-        let transaction = WriteTransaction(realm: realm)
-        try realm.write {
-            try block(transaction)
-        }
-    }
     
     static func fetchObject<T: Persistable>(_ persistable: T.Type, id: UID) throws -> T {
         guard let realm = RealmManager.realm() else {
@@ -150,6 +133,24 @@ public final class RealmManager {
         let results = realm.objects(persistable.ManagedObject)
         return results.compactMap({ T(managedObject: $0) })
     }
+    
+    
+  /**
+   * 사용:
+   try! manager.write { transaction in
+       transaction.add(Object)
+   }
+   */
+  static func write(_ block: (WriteTransaction) throws -> Void) throws {
+      guard let realm = RealmManager.realm() else {
+          throw RealmErrorMessage.FailInitialize
+      }
+      
+      let transaction = WriteTransaction(realm: realm)
+      try realm.write {
+          try block(transaction)
+      }
+  }
     
     static func editGroup<T: Persistable>(_ persistable: T.Type, targetID: UID, title: String) async throws -> T {
         typealias Continuation = CheckedContinuation<T, Error>
