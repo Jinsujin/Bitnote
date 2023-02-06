@@ -2,6 +2,10 @@ import Foundation
 
 
 class MockGroupRepository: Repository {
+    enum MockRepositoryError: Error {
+        case outOfRange
+        case invalidIndex
+    }
 
     // test property
     var getGroupMethodCallCount = 0
@@ -22,43 +26,45 @@ class MockGroupRepository: Repository {
         groupList = groups
     }
     
-    func fetchGroups(completion: @escaping ([Group]) -> Void) {
+    func fetchGroups() -> Result<[Group], Error> {
         fetchGroupsMethodCallCount += 1
-        completion(groupList)
+        return .success(groupList)
     }
     
-    func getGroup(source groups: [Group], at index: Int) -> Group? {
+    func pickGroup(in groups: [Group], at index: Int) -> Result<Group, Error> {
         getGroupMethodCallCount += 1
-        return groups[safe: index]
+        guard let groups = groups[safe: index] else {
+            return .failure(MockRepositoryError.outOfRange)
+        }
+        return .success(groups)
     }
     
-    func addGroup(source groups: [Group], title: String, completion: @escaping ([Group]?) -> Void) {
+    func addGroup(source groups: [Group], title: String) async -> Result<[Group], Error> {
         let newGroup = Group(title: title)
         var sourceGroups = groups
         sourceGroups.append(newGroup)
         addGroupMethodCallCount += 1
-        completion(sourceGroups)
+        return .success(sourceGroups)
     }
     
-    func deleteGroup(source groups: [Group], row: Int, completion: @escaping ([Group]?) -> Void) {
+    func deleteGroup(source groups: [Group], row: Int) async -> Result<[Group] ,Error> {
         deleteGroupMethodCallCount += 1
         var sourceGroups = groups
         sourceGroups.remove(at: row)
-        completion(sourceGroups)
+        return .success(sourceGroups)
     }
     
-    func editGroup(source groups: [Group], target id: UID, editTitle: String, completion: @escaping ([Group]?) -> Void) {
+    func editGroup(source groups: [Group], target id: UID, editTitle: String) async -> Result<[Group], Error> {
         editGroupTitleMethodCallCount += 1
         var sourceGroups = groups
-        
+
         guard let index = sourceGroups.firstIndex(where: { $0.id == id }) else {
-            completion(nil)
-            return
+            return .failure(MockRepositoryError.invalidIndex)
         }
         let originalGroup = sourceGroups[index]
         sourceGroups.remove(at: index)
         let updateGroup = Group(id: originalGroup.id, title: editTitle, notelist: originalGroup.notelist)
         sourceGroups.insert(updateGroup, at: index)
-        completion(sourceGroups)
+        return .success(sourceGroups)
     }
 }
