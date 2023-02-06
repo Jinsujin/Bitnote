@@ -16,19 +16,9 @@ class GroupListViewController: AdsBaseViewController {
     
     private let viewModel = GroupListViewModel(repository: GroupRepository())
     private let disposeBag = DisposeBag()
+    private var runningTask: Task<Void, Never>?
 
     @IBOutlet weak var tableView: UITableView!
-    
-    private lazy var addGroupButton: UIBarButtonItem = {
-        let btn = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(touchedAddGroupButton))
-        return btn
-    }()
-    
-    private lazy var nodataView: NoDataView = {
-        let view = NoDataView(frame: self.view.frame)
-        self.view.addSubview(view)
-        return view
-    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,12 +34,13 @@ class GroupListViewController: AdsBaseViewController {
         viewModel.getGroups()
     }
     
-
-    /**
-     sender: 클릭한 대상 -> cell의 정보
-     
-     */
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        runningTask?.cancel()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // sender: 클릭한 대상 -> cell의 정보
         let identifier = segue.identifier ?? ""
         if identifier == NoteListViewController.identifier,
             let notelistVC = segue.destination as? NoteListViewController,
@@ -72,6 +63,7 @@ class GroupListViewController: AdsBaseViewController {
         present(vc, animated: false)
     }
     
+    // MARK: - Private functions
     private func setupBindings(){
         // table view
         viewModel.groupListOb
@@ -86,21 +78,39 @@ class GroupListViewController: AdsBaseViewController {
             .bind(to: nodataView.rx.isHidden)
             .disposed(by: disposeBag)
     }
+    
+    // MARK: - Private views
+    private lazy var addGroupButton: UIBarButtonItem = {
+        let btn = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(touchedAddGroupButton))
+        return btn
+    }()
+    
+    private lazy var nodataView: NoDataView = {
+        let view = NoDataView(frame: self.view.frame)
+        self.view.addSubview(view)
+        return view
+    }()
 }
 
-// MARK:- GroupAddViewDelegate
+// MARK: - GroupAddViewDelegate
 extension GroupListViewController: GroupAddViewDelegate {
     func saveNewGroup(title: String) {
-        self.viewModel.addNewGroup(title)
+        runningTask = Task {
+            await self.viewModel.addNewGroup(title)
+            runningTask = nil
+        }
     }
     
     func editGroup(original: Group, editTitle: String) {
-        self.viewModel.editGroupTitle(original, title: editTitle)
+        runningTask = Task {
+            await self.viewModel.editGroupTitle(original, title: editTitle)
+            runningTask = nil
+        }
     }
 }
 
 
-// MARK:- UITableViewDataSource
+// MARK: - UITableViewDataSource
 extension GroupListViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
@@ -126,8 +136,11 @@ extension GroupListViewController: UITableViewDelegate {
     private func handleDeleteCategory(_ indexPath: IndexPath) -> Bool {
         let deleteAlert = UIAlertController(title: "group_delete_title".localized(), message: "group_delete_alert_message".localized(), preferredStyle: .alert)
 
-        let deleteAction = UIAlertAction(title: "button_delete".localized(), style: .destructive) { (action) in
-            self.viewModel.deleteGroup(at: indexPath.row)
+        let deleteAction = UIAlertAction(title: "button_delete".localized(), style: .destructive) { [self] (action) in
+            self.runningTask = Task {
+                await self.viewModel.deleteGroup(at: indexPath.row)
+                self.runningTask = nil
+            }
         }
 
         deleteAlert.addAction(deleteAction)

@@ -13,42 +13,41 @@ final class GroupListViewModel {
         getGroups()
     }
     
-    
     func getGroups() {
-        repository.fetchGroups { [weak self] groups in
-            self?.groupListOb.accept(groups)
+        if case let .success(data) = repository.fetchGroups() {
+            self.groupListOb.accept(data)
         }
     }
-    
-    
-    func addNewGroup(_ title: String) {
-        repository.addGroup(source: groupListOb.value, title: title) { [weak self] updatedGroups in
-            if let groups = updatedGroups {
-                self?.groupListOb.accept(groups)
-            }
-        }
-    }
-    
-    
-    func deleteGroup(at row: Int) {
-        repository.deleteGroup(source: groupListOb.value, row: row) { [weak self] updatedGroups in
-            if let groups = updatedGroups {
-                self?.groupListOb.accept(groups)
-            }
-        }
-    }
-    
     
     func getGroup(by indexPath: IndexPath) -> Group? {
-        return repository.getGroup(source: groupListOb.value, at: indexPath.row)
+        let result = repository.pickGroup(in: groupListOb.value, at: indexPath.row)
+        if case let .success(data) = result {
+            return data
+        }
+        return nil
     }
     
-    
-    func editGroupTitle(_ selectedGroup: Group, title: String) {
-        repository.editGroup(source: groupListOb.value, target: selectedGroup.id, editTitle: title) { [weak self] updatedGroups in
-            if let groups = updatedGroups {
-                self?.groupListOb.accept(groups)
-            }
+    func addNewGroup(_ title: String) async {
+        let result = await repository.addGroup(source: groupListOb.value, title: title)
+        if case let .success(groups) = result {
+            self.groupListOb.accept(groups)
         }
+        // TODO: - Error handle
+    }
+    
+    func editGroupTitle(_ selectedGroup: Group, title: String) async {
+        let result = await repository.editGroup(source: groupListOb.value, target: selectedGroup.id, editTitle: title)
+        if case let .success(updatedGroups) = result {
+            groupListOb.accept(updatedGroups)
+        }
+        // TODO: - Error handle
+    }
+    
+    func deleteGroup(at row: Int) async {
+        let result = await repository.deleteGroup(source: groupListOb.value, row: row)
+        if case let .success(updatedGroups) = result {
+            self.groupListOb.accept(updatedGroups)
+        }
+        // TODO: - Error handle
     }
 }
